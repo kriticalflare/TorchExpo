@@ -7,4 +7,5 @@
     <color name="colorPyTorch1">#E32D5B</color>
     <color name="colorPyTorch2">#CC2FAA</color>
     <color name="colorPyTorch3">#812CE5</color>
+    <color name="colorButtonBg">#F3F4F7</color>
 </resources>

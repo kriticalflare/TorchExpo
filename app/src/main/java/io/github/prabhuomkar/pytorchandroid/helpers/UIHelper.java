@@ -1,6 +1,7 @@
 package io.github.prabhuomkar.pytorchandroid.helpers;
 
 import android.content.Context;
+import android.content.res.Resources;
 import android.view.View;
 
 import androidx.annotation.IdRes;
@@ -12,6 +13,7 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import java.util.Objects;
 
+import io.github.prabhuomkar.pytorchandroid.Constants;
 import io.github.prabhuomkar.pytorchandroid.R;
 
 public class UIHelper {
@@ -35,6 +37,14 @@ public class UIHelper {
             recyclerView.addItemDecoration(new DividerItemDecoration(context,
                     DividerItemDecoration.VERTICAL));
         }
+    }
+
+    public static int getImageResourceId(Context context, String resourceName) {
+        Resources res = context.getResources();
+        int validResId = res.getIdentifier(resourceName, "drawable", context.getPackageName());
+        return (validResId != 0) ? validResId :
+                res.getIdentifier(Constants.PLACEHOLDER_IMAGE_NAME, "drawable",
+                        context.getPackageName());
     }
 
 }

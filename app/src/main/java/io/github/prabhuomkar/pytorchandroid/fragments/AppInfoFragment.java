@@ -10,10 +10,6 @@ import androidx.fragment.app.Fragment;
 import io.github.prabhuomkar.pytorchandroid.R;
 
 public class AppInfoFragment extends Fragment {
-
-    public AppInfoFragment() {
-    }
-
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {

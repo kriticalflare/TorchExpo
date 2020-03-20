@@ -1,14 +1,11 @@
 <resources>
     <!-- General !-->
     <string name="app_name">PyTorch Android</string>
-
     <!-- AppInfo Fragment !-->
     <string name="app_info_copyright">© 2020 PyTorch Android Contributors</string>
     <string name="app_info_licenses"><u>LICENSES</u></string>
-
     <!-- Home Fragment !-->
     <string name="looking_for_contributions">Looking for Contributions!</string>
-
     <!-- Menus !-->
     <string name="menu_contact_us">Contact us</string>
     <string name="menu_github">GitHub</string>

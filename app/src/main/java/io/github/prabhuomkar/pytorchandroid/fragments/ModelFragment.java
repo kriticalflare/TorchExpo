@@ -24,9 +24,6 @@ public class ModelFragment extends Fragment {
     ImageView imageView;
     private Model mModel;
 
-    public ModelFragment() {
-    }
-
     public static ModelFragment newInstance(Model model) {
         ModelFragment fragment = new ModelFragment();
         Bundle args = new Bundle();
