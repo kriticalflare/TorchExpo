@@ -1,18 +1,19 @@
-// Top-level build file where you can add configuration options common to all sub-projects/modules.
-
 buildscript {
-    
+    ext.gradle_version     = '3.6.1'
+    ext.pytorch_version    = '1.4.0.1'
+    ext.appcompat_version  = '1.1.0'
+    ext.constraint_version = '1.1.3'
+    ext.legacy_version     = '1.0.0'
+    ext.cardview_version   = '1.0.0'
+    ext.rv_version         = '1.1.0'
+    ext.rv_sel_version     = '1.1.0-rc01'
+    ext.camerax_version    = '1.0.0-beta01'
     repositories {
         google()
         jcenter()
-        
     }
     dependencies {
         classpath 'com.android.tools.build:gradle:3.6.1'
-        
-
-        // NOTE: Do not place your application dependencies here; they belong
-        // in the individual module build.gradle files
     }
 }
 
@@ -20,7 +21,6 @@ allprojects {
     repositories {
         google()
         jcenter()
-        
     }
 }
 

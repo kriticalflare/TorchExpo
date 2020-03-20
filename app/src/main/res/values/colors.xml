@@ -1,6 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <color name="colorPrimary">#6200EE</color>
-    <color name="colorPrimaryDark">#3700B3</color>
-    <color name="colorAccent">#03DAC5</color>
+    <color name="colorPrimary">#262626</color>
+    <color name="colorPrimaryDark">#000000</color>
+    <color name="colorAccent">#EE4C2C</color>
+    <color name="colorArxiv">#B31B1B</color>
+    <color name="colorPyTorch1">#E32D5B</color>
+    <color name="colorPyTorch2">#CC2FAA</color>
+    <color name="colorPyTorch3">#812CE5</color>
 </resources>

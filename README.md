@@ -41,8 +41,7 @@ can add PyTorch's Gradle dependencies and can run inferences. _[Read more]
 ## About
 PyTorch Android is an android application which contains collection of machine learning experiments
 built using PyTorch and its Android API. This application will allow you to try tasks like Image
-Classification, Sentiment Analysis, Object Detection and many more with famous datasets _(like
-MNIST, ImageNet, etc.)_ and State-Of-The-Art models _(like AlexNet, ResNet, etc.)_.
+Classification with State-Of-The-Art models _(like AlexNet, ResNet, etc.)_.
 
 ### Built With
 * [PyTorch](https://pytorch.org) & [PyTorch Android API](https://pytorch.org/mobile/android/)
@@ -51,17 +50,18 @@ MNIST, ImageNet, etc.)_ and State-Of-The-Art models _(like AlexNet, ResNet, etc.
 * [Android Studio](https://developer.android.com/studio)
 
 ### Project Structure
-* [activities](app/src/main/java/org/pytorch/pytorchandroid/activities) - Contains all android
-activities created
-* [adapters](app/src/main/java/org/pytorch/pytorchandroid/adapters) - Contains all list adapters
-* [fragments](app/src/main/java/org/pytorch/pytorchandroid/fragments) - Contains all android
-fragments used
-* [helpers](app/src/main/java/org/pytorch/pytorchandroid/helpers) - Contains constants, helper
-functions for actions like switching fragments, loading images, etc.
-* [models](app/src/main/java/org/pytorch/pytorchandroid/models) - Contains data models for several
-lists, fragments to display on the UI
-* [tasks](app/src/main/java/org/pytorch/pytorchandroid/models) - Contains all classifier code which
-converts image to tensors and runs the classifier, target classes for several datasets
+* [activities](app/src/main/java/io/github/prabhuomkar/pytorchandroid/activities) - 
+Contains all android activities created
+* [adapters](app/src/main/java/io/github/prabhuomkar/pytorchandroid/adapters) - 
+Contains all list adapters
+* [fragments](app/src/main/java/io/github/prabhuomkar/pytorchandroid/fragments) - 
+Contains all android fragments used
+* [helpers](app/src/main/java/io/github/prabhuomkar/pytorchandroid/helpers) - 
+Contains constants, helper functions for actions related to UI, Fragments, etc.
+* [models](app/src/main/java/io/github/prabhuomkar/pytorchandroid/models) - 
+Contains data models for several lists, fragments to display on the UI
+* [datasets](app/src/main/java/io/github/prabhuomkar/pytorchandroid/datasets) - 
+Contains classifier functions and target classes for datasets
 
 ## Getting Started
 
