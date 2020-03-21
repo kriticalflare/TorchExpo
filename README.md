@@ -35,8 +35,8 @@ from Python to deployment on iOS and Android. _[Read more](https://pytorch.org/m
 ### PyTorch Android API
 PyTorch Mobile provides Java APIs for integration of Machine Learning models built with Python
 into an Android application. It is as simple as importing and using any other Android library. You
-can add PyTorch's Gradle dependencies and can run inferences. _[Read more]
-(https://pytorch.org/mobile/android/)_
+can add PyTorch's Gradle dependencies and can run inferences.
+_[Read more](https://pytorch.org/mobile/android/)_
 
 ## About
 PyTorch Android is an android application which contains collection of machine learning experiments

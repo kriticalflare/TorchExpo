@@ -37,6 +37,17 @@ public class PermissionsHelper {
         }
     }
 
+    public static boolean hasAllPermissions(AppCompatActivity appCompatActivity) {
+        Context context = appCompatActivity.getApplicationContext();
+        for (int i = 0; i < PERMISSIONS_LIST.length; i++) {
+            if (ContextCompat.checkSelfPermission(context, PERMISSIONS_LIST[i])
+                    != PackageManager.PERMISSION_GRANTED) {
+                return false;
+            }
+        }
+        return true;
+    }
+
     public static void checkPermissions(AppCompatActivity appCompatActivity,
                                         int requestCode,
                                         @NonNull String[] permissions,
@@ -49,8 +60,8 @@ public class PermissionsHelper {
             } else if (grantResults.length == 3) {
                 AlertDialog.Builder builder = new AlertDialog.Builder(
                         appCompatActivity);
-                builder.setMessage(Constants.PERMISSION_ERROR_MESSAGE)
-                        .setTitle(Constants.PERMISSION_ERROR_TITLE)
+                builder.setMessage(Constants.ERR_PERMISSION_MESSAGE)
+                        .setTitle(Constants.ERR_PERMISSION_TITLE)
                         .setCancelable(false)
                         .setPositiveButton("GRANT PERMISSION", new DialogInterface.OnClickListener() {
                             @Override

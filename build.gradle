@@ -7,7 +7,7 @@ buildscript {
     ext.cardview_version   = '1.0.0'
     ext.rv_version         = '1.1.0'
     ext.rv_sel_version     = '1.1.0-rc01'
-    ext.camerax_version    = '1.0.0-beta01'
+    ext.camerax_version    = '1.0.0-alpha06'
     ext.picasso_version    = '2.71828'
     ext.prdown_version     = '0.6.0'
     repositories {

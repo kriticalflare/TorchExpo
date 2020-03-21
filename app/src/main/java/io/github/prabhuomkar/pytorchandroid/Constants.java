@@ -8,15 +8,16 @@ import io.github.prabhuomkar.pytorchandroid.models.Task;
 public class Constants {
     // Global Defaults
     public static final String PLACEHOLDER_IMAGE_NAME = "pytorch_placeholder";
-    public static final String PERMISSION_ERROR_MESSAGE = "PyTorch Android requires Camera " +
-            "Permission to capture images for classification & Storage Permission to download " +
-            "models";
-    public static final String PERMISSION_ERROR_TITLE = "Permission Required";
     // Home Activity
     public static final String CONTACT_EMAIL = "prabhuomkar@pm.me";
     public static final String HELP_URL = "https://github.com/prabhuomkar/pytorch-android";
     // Errors
     public static final String ERR_NO_EMAIL_CLIENT = "Please select an email client";
+    public static final String ERR_MODEL_NOT_FOUND = "Model not found";
+    public static final String ERR_PERMISSION_TITLE = "Permission Required";
+    public static final String ERR_PERMISSION_MESSAGE = "PyTorch Android requires Camera " +
+            "Permission to capture images for classification & Storage Permission to download " +
+            "models";
     // Data for lists to show on UI
     public static final String TASK_IMAGE_CLASSIFICATION = "Image Classification";
     public static final ArrayList<Task> tasks = new ArrayList<Task>() {
