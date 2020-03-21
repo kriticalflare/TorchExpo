@@ -59,7 +59,7 @@ public class ModelListAdapter extends RecyclerView.Adapter<ModelListAdapter.Mode
         RecyclerViewClickListener clickListener;
         TextView modelNameView, modelDescriptionView, modelPaperLinkView, modelSourceLinkView;
         ImageView modelImageView;
-        Button modelDownloadButton;
+        Button modelDownloadButton, modelRunButton;
 
         public ModelView(@NonNull View itemView) {
             super(itemView);
@@ -75,6 +75,8 @@ public class ModelListAdapter extends RecyclerView.Adapter<ModelListAdapter.Mode
                     .findViewById(R.id.list_model_item_sourcelink);
             modelDownloadButton = (Button) itemView
                     .findViewById(R.id.list_model_item_download);
+            modelRunButton = (Button) itemView
+                    .findViewById(R.id.list_model_item_run);
             modelPaperLinkView.setOnClickListener(v -> context.startActivity(
                     new Intent(Intent.ACTION_VIEW,
                             Uri.parse(modelList.get(getAdapterPosition()).getPaperLink()))));
@@ -83,6 +85,8 @@ public class ModelListAdapter extends RecyclerView.Adapter<ModelListAdapter.Mode
                             Uri.parse(modelList.get(getAdapterPosition()).getSourceLink()))));
             modelDownloadButton.setOnClickListener(v ->
                     Toast.makeText(context, "Downloading Model", Toast.LENGTH_SHORT).show());
+            modelRunButton.setOnClickListener(v ->
+                    Toast.makeText(context, "Running Demo", Toast.LENGTH_SHORT).show());
         }
     }
 }
