@@ -28,14 +28,17 @@ public class Constants {
             add(new Model("AlexNet", "The 2012 ImageNet winner achieved a top-5 error of 15.3%," +
                     " more than 10.8 percentage points lower than that of the runner up.",
                     "https://arxiv.org/abs/1404.5997", "https://pytorch.org/hub/pytorch_vision_alexnet/",
-                    "", "https://pytorch.org/assets/images/alexnet2.png"));
+                    "https://static.nvidiagrid.net/ngc/containers/pytorch-logo-light.png",
+                    "https://pytorch.org/assets/images/alexnet2.png"));
             add(new Model("ResNet-18", "Next generation ResNets, more efficient and accurate",
                     "https://arxiv.org/abs/1512.03385", "https://pytorch.org/hub/pytorch_vision_resnext/",
-                    "", "https://pytorch.org/assets/images/resnet.png"));
+                    "https://static.nvidiagrid.net/ngc/containers/pytorch-logo-light.png",
+                    "https://pytorch.org/assets/images/resnet.png"));
             add(new Model("GoogleNet", "GoogLeNet was based on a deep convolutional neural network " +
                     "architecture codenamed \"Inception\" which won ImageNet 2014.",
                     "https://arxiv.org/abs/1409.4842", "https://pytorch.org/hub/pytorch_vision_googlenet/",
-                    "", "https://pytorch.org/assets/images/googlenet2.png"));
+                    "https://static.nvidiagrid.net/ngc/containers/pytorch-logo-light.png",
+                    "https://pytorch.org/assets/images/googlenet2.png"));
         }
     };
 }

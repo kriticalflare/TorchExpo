@@ -18,6 +18,8 @@ import androidx.recyclerview.widget.RecyclerView;
 import java.util.List;
 
 import io.github.prabhuomkar.pytorchandroid.R;
+import io.github.prabhuomkar.pytorchandroid.helpers.DownloadHelper;
+import io.github.prabhuomkar.pytorchandroid.helpers.FileHelper;
 import io.github.prabhuomkar.pytorchandroid.models.Model;
 
 public class ModelListAdapter extends RecyclerView.Adapter<ModelListAdapter.ModelView> {
@@ -45,6 +47,10 @@ public class ModelListAdapter extends RecyclerView.Adapter<ModelListAdapter.Mode
         holder.modelDescriptionView.setText(currentModel.getDescription());
         holder.modelPaperLinkView.setText(currentModel.getPaperLink());
         holder.modelSourceLinkView.setText(currentModel.getSourceLink());
+        if (FileHelper.checkIfFileExists(FileHelper.getAssetModelFilePath(context,
+                currentModel.getName()))) {
+            holder.modelDownloadButton.setVisibility(View.GONE);
+        }
         // TODO: Load model architecture images using Picasso
     }
 
@@ -77,14 +83,26 @@ public class ModelListAdapter extends RecyclerView.Adapter<ModelListAdapter.Mode
                     .findViewById(R.id.list_model_item_download);
             modelRunButton = (Button) itemView
                     .findViewById(R.id.list_model_item_run);
+
+            // Click listeners
             modelPaperLinkView.setOnClickListener(v -> context.startActivity(
-                    new Intent(Intent.ACTION_VIEW,
-                            Uri.parse(modelList.get(getAdapterPosition()).getPaperLink()))));
+                    new Intent(Intent.ACTION_VIEW, Uri.parse(
+                            modelList.get(getAdapterPosition()).getPaperLink()))));
             modelSourceLinkView.setOnClickListener(v -> context.startActivity(
-                    new Intent(Intent.ACTION_VIEW,
-                            Uri.parse(modelList.get(getAdapterPosition()).getSourceLink()))));
-            modelDownloadButton.setOnClickListener(v ->
-                    Toast.makeText(context, "Downloading Model", Toast.LENGTH_SHORT).show());
+                    new Intent(Intent.ACTION_VIEW, Uri.parse(
+                            modelList.get(getAdapterPosition()).getSourceLink()))));
+            modelDownloadButton.setOnClickListener(v -> {
+                String fileName = FileHelper.getAssetFileNameForModel(
+                        modelList.get(getAdapterPosition()).getName());
+                if (((Button) v).getText().equals("Cancel")) {
+                    DownloadHelper.cancelDownload(fileName);
+                } else {
+                    DownloadHelper.downloadModel(context, itemView,
+                            modelList.get(getAdapterPosition()).getDownloadLink(),
+                            FileHelper.getDownloadDirPath(context),
+                            fileName);
+                }
+            });
             modelRunButton.setOnClickListener(v ->
                     Toast.makeText(context, "Running Demo", Toast.LENGTH_SHORT).show());
         }

@@ -15,8 +15,8 @@ import java.util.List;
 
 import io.github.prabhuomkar.pytorchandroid.R;
 import io.github.prabhuomkar.pytorchandroid.fragments.TaskFragment;
+import io.github.prabhuomkar.pytorchandroid.helpers.FileHelper;
 import io.github.prabhuomkar.pytorchandroid.helpers.FragmentHelper;
-import io.github.prabhuomkar.pytorchandroid.helpers.UIHelper;
 import io.github.prabhuomkar.pytorchandroid.models.Task;
 
 public class TaskListAdapter extends RecyclerView.Adapter<TaskListAdapter.TaskView> {
@@ -49,7 +49,7 @@ public class TaskListAdapter extends RecyclerView.Adapter<TaskListAdapter.TaskVi
         Task currentTask = taskList.get(position);
         holder.taskNameView.setText(currentTask.getName());
         holder.taskDescriptionView.setText(currentTask.getDescription());
-        holder.taskImageView.setImageResource(UIHelper.getImageResourceId(
+        holder.taskImageView.setImageResource(FileHelper.getImageResourceId(
                 context, currentTask.getImageLink()));
     }
 
