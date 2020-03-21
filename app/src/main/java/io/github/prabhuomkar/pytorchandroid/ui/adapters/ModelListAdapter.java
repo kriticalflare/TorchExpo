@@ -3,13 +3,13 @@ package io.github.prabhuomkar.pytorchandroid.ui.adapters;
 import android.content.Context;
 import android.content.Intent;
 import android.net.Uri;
+import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
-import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
@@ -21,6 +21,7 @@ import io.github.prabhuomkar.pytorchandroid.R;
 import io.github.prabhuomkar.pytorchandroid.helpers.DownloadHelper;
 import io.github.prabhuomkar.pytorchandroid.helpers.FileHelper;
 import io.github.prabhuomkar.pytorchandroid.models.Model;
+import io.github.prabhuomkar.pytorchandroid.playground.ImageClassificationActivity;
 
 public class ModelListAdapter extends RecyclerView.Adapter<ModelListAdapter.ModelView> {
 
@@ -103,8 +104,13 @@ public class ModelListAdapter extends RecyclerView.Adapter<ModelListAdapter.Mode
                             fileName);
                 }
             });
-            modelRunButton.setOnClickListener(v ->
-                    Toast.makeText(context, "Running Demo", Toast.LENGTH_SHORT).show());
+            modelRunButton.setOnClickListener(v -> {
+                Intent playgroundIntent = new Intent(context, ImageClassificationActivity.class);
+                Bundle bundle = new Bundle();
+                bundle.putString("modelName", modelList.get(getAdapterPosition()).getName());
+                playgroundIntent.putExtras(bundle);
+                context.startActivity(playgroundIntent);
+            });
         }
     }
 }

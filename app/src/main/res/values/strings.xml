@@ -11,4 +11,5 @@
     <string name="menu_github">GitHub</string>
     <string name="menu_app_info">App Info</string>
     <string name="cd_pytorch_logo">PyTorch</string>
+    <string name="task_image_classification">Image Classification</string>
 </resources>
