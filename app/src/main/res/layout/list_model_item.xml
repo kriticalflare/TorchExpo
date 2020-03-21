@@ -16,7 +16,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="center_vertical"
-            android:layout_weight="0.6">
+            android:layout_weight="0.65">
 
             <ImageView
                 android:id="@+id/list_model_item_image"
@@ -35,7 +35,7 @@
             android:layout_height="wrap_content"
             android:layout_gravity="center_vertical"
             android:layout_marginStart="16dp"
-            android:layout_weight="0.4"
+            android:layout_weight="0.35"
             android:orientation="vertical">
 
             <TextView
@@ -88,13 +88,28 @@
 
     </LinearLayout>
 
-    <Button
-        android:id="@+id/list_model_item_download"
-        style="@style/PyTorchButtonTheme"
-        android:layout_width="wrap_content"
+    <RelativeLayout
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_gravity="end"
-        android:layout_marginTop="16dp"
-        android:text="Download" />
+        android:layout_marginTop="16dp">
+
+        <Button
+            android:id="@+id/list_model_item_download"
+            style="@style/PyTorchButtonTheme"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="16dp"
+            android:layout_toStartOf="@+id/list_model_item_run"
+            android:text="Download" />
+
+        <Button
+            android:id="@+id/list_model_item_run"
+            style="@style/PyTorchButtonTheme"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentEnd="true"
+            android:text="Run Demo" />
+
+    </RelativeLayout>
 
 </LinearLayout>

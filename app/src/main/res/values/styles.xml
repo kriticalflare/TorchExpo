@@ -13,7 +13,8 @@
         <item name="android:background">@drawable/button_border_line</item>
         <item name="android:elevation">0dp</item>
         <item name="android:drawableEnd">@drawable/ic_chevron_right</item>
-        <item name="android:textSize">16sp</item>
+        <item name="android:paddingTop">0dp</item>
+        <item name="android:paddingBottom">0dp</item>
         <item name="android:paddingStart">16dp</item>
         <item name="android:paddingEnd">16dp</item>
         <item name="android:textColor">@color/colorPrimaryDark</item>
