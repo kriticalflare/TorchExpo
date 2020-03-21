@@ -9,10 +9,10 @@ import android.view.ViewGroup;
 import androidx.fragment.app.Fragment;
 
 import io.github.prabhuomkar.pytorchandroid.R;
-import io.github.prabhuomkar.pytorchandroid.ui.adapters.ModelListAdapter;
 import io.github.prabhuomkar.pytorchandroid.helpers.DataHelper;
 import io.github.prabhuomkar.pytorchandroid.helpers.UIHelper;
 import io.github.prabhuomkar.pytorchandroid.models.Task;
+import io.github.prabhuomkar.pytorchandroid.ui.adapters.ModelListAdapter;
 
 public class TaskFragment extends Fragment {
     private static final String ARG_NAME = "name";

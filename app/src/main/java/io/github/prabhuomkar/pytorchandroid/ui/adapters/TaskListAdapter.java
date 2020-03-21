@@ -14,10 +14,10 @@ import androidx.recyclerview.widget.RecyclerView;
 import java.util.List;
 
 import io.github.prabhuomkar.pytorchandroid.R;
-import io.github.prabhuomkar.pytorchandroid.ui.fragments.TaskFragment;
 import io.github.prabhuomkar.pytorchandroid.helpers.FileHelper;
 import io.github.prabhuomkar.pytorchandroid.helpers.FragmentHelper;
 import io.github.prabhuomkar.pytorchandroid.models.Task;
+import io.github.prabhuomkar.pytorchandroid.ui.fragments.TaskFragment;
 
 public class TaskListAdapter extends RecyclerView.Adapter<TaskListAdapter.TaskView> {
 

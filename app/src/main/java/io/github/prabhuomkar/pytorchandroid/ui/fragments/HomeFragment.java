@@ -10,8 +10,8 @@ import androidx.fragment.app.Fragment;
 
 import io.github.prabhuomkar.pytorchandroid.Constants;
 import io.github.prabhuomkar.pytorchandroid.R;
-import io.github.prabhuomkar.pytorchandroid.ui.adapters.TaskListAdapter;
 import io.github.prabhuomkar.pytorchandroid.helpers.UIHelper;
+import io.github.prabhuomkar.pytorchandroid.ui.adapters.TaskListAdapter;
 
 public class HomeFragment extends Fragment {
 

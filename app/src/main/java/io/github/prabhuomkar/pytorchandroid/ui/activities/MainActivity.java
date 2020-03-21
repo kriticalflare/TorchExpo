@@ -11,10 +11,10 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import io.github.prabhuomkar.pytorchandroid.Constants;
 import io.github.prabhuomkar.pytorchandroid.R;
-import io.github.prabhuomkar.pytorchandroid.ui.fragments.AppInfoFragment;
-import io.github.prabhuomkar.pytorchandroid.ui.fragments.HomeFragment;
 import io.github.prabhuomkar.pytorchandroid.helpers.FragmentHelper;
 import io.github.prabhuomkar.pytorchandroid.helpers.UIHelper;
+import io.github.prabhuomkar.pytorchandroid.ui.fragments.AppInfoFragment;
+import io.github.prabhuomkar.pytorchandroid.ui.fragments.HomeFragment;
 
 public class MainActivity extends AppCompatActivity {
 
