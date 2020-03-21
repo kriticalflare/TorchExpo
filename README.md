@@ -50,18 +50,20 @@ Classification with State-Of-The-Art models _(like AlexNet, ResNet, etc.)_.
 * [Android Studio](https://developer.android.com/studio)
 
 ### Project Structure
-* [activities](app/src/main/java/io/github/prabhuomkar/pytorchandroid/activities) - 
-Contains all android activities created
-* [adapters](app/src/main/java/io/github/prabhuomkar/pytorchandroid/adapters) - 
-Contains all list adapters
-* [fragments](app/src/main/java/io/github/prabhuomkar/pytorchandroid/fragments) - 
-Contains all android fragments used
+* [ui](app/src/main/java/io/github/prabhuomkar/pytorchandroid/ui) - 
+Contains UI related code like activities and fragments
+  * [activities](app/src/main/java/io/github/prabhuomkar/pytorchandroid/activities) - 
+  Contains all android activities created
+  * [adapters](app/src/main/java/io/github/prabhuomkar/pytorchandroid/adapters) - 
+  Contains all list adapters
+  * [fragments](app/src/main/java/io/github/prabhuomkar/pytorchandroid/fragments) - 
+  Contains all android fragments used
+* [datasets](app/src/main/java/io/github/prabhuomkar/pytorchandroid/datasets) - 
+Contains classifier functions and target classes for datasets
 * [helpers](app/src/main/java/io/github/prabhuomkar/pytorchandroid/helpers) - 
 Contains constants, helper functions for actions related to UI, Fragments, etc.
 * [models](app/src/main/java/io/github/prabhuomkar/pytorchandroid/models) - 
 Contains data models for several lists, fragments to display on the UI
-* [datasets](app/src/main/java/io/github/prabhuomkar/pytorchandroid/datasets) - 
-Contains classifier functions and target classes for datasets
 
 ## Getting Started
 
