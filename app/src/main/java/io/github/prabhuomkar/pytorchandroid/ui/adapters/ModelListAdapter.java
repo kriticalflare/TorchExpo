@@ -1,4 +1,4 @@
-package io.github.prabhuomkar.pytorchandroid.adapters;
+package io.github.prabhuomkar.pytorchandroid.ui.adapters;
 
 import android.content.Context;
 import android.content.Intent;

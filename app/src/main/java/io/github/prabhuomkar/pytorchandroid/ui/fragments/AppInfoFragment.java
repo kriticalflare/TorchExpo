@@ -1,4 +1,4 @@
-package io.github.prabhuomkar.pytorchandroid.fragments;
+package io.github.prabhuomkar.pytorchandroid.ui.fragments;
 
 import android.os.Bundle;
 import android.view.LayoutInflater;

@@ -1,4 +1,4 @@
-package io.github.prabhuomkar.pytorchandroid.adapters;
+package io.github.prabhuomkar.pytorchandroid.ui.adapters;
 
 import android.content.Context;
 import android.view.LayoutInflater;
@@ -14,7 +14,7 @@ import androidx.recyclerview.widget.RecyclerView;
 import java.util.List;
 
 import io.github.prabhuomkar.pytorchandroid.R;
-import io.github.prabhuomkar.pytorchandroid.fragments.TaskFragment;
+import io.github.prabhuomkar.pytorchandroid.ui.fragments.TaskFragment;
 import io.github.prabhuomkar.pytorchandroid.helpers.FileHelper;
 import io.github.prabhuomkar.pytorchandroid.helpers.FragmentHelper;
 import io.github.prabhuomkar.pytorchandroid.models.Task;

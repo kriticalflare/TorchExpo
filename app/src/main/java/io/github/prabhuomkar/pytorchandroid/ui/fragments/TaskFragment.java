@@ -1,4 +1,4 @@
-package io.github.prabhuomkar.pytorchandroid.fragments;
+package io.github.prabhuomkar.pytorchandroid.ui.fragments;
 
 import android.content.Context;
 import android.os.Bundle;
@@ -9,7 +9,7 @@ import android.view.ViewGroup;
 import androidx.fragment.app.Fragment;
 
 import io.github.prabhuomkar.pytorchandroid.R;
-import io.github.prabhuomkar.pytorchandroid.adapters.ModelListAdapter;
+import io.github.prabhuomkar.pytorchandroid.ui.adapters.ModelListAdapter;
 import io.github.prabhuomkar.pytorchandroid.helpers.DataHelper;
 import io.github.prabhuomkar.pytorchandroid.helpers.UIHelper;
 import io.github.prabhuomkar.pytorchandroid.models.Task;
