@@ -1,7 +1,7 @@
 package io.github.prabhuomkar.pytorchandroid.helpers;
 
+import android.annotation.SuppressLint;
 import android.content.Context;
-import android.util.Log;
 import android.view.View;
 import android.widget.Toast;
 
@@ -18,8 +18,13 @@ public class DownloadHelper {
                 .build()
                 .setOnCancelListener(() -> {
                     UIHelper.updateModelDownloadButton(view, "Download");
+                    UIHelper.updateModelDownloadProgress(view, "100%");
                 })
                 .setOnProgressListener(progress -> {
+                    @SuppressLint("DefaultLocale") String percentage =
+                            String.format("%.2f", ((double) progress.currentBytes /
+                                    (double) progress.totalBytes) * 100.0) + "%";
+                    UIHelper.updateModelDownloadProgress(view, percentage);
                     UIHelper.updateModelDownloadButton(view, "Cancel");
                 })
                 .start(new OnDownloadListener() {
@@ -28,14 +33,15 @@ public class DownloadHelper {
                         Toast.makeText(context, "Model File: " + fileName +
                                 " downloaded successfully", Toast.LENGTH_SHORT).show();
                         UIHelper.updateModelDownloadButton(view, "Done");
-                        Log.v(getClass().getName(), "onDownloadComplete");
+                        UIHelper.updateModelDownloadProgress(view, "100%");
                     }
 
                     @Override
                     public void onError(Error error) {
                         Toast.makeText(context, "Some error. Try again!",
                                 Toast.LENGTH_SHORT).show();
-                        Log.v(getClass().getName(), "onError");
+                        UIHelper.updateModelDownloadButton(view, "Download");
+                        UIHelper.updateModelDownloadProgress(view, "100%");
                     }
                 });
     }

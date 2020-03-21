@@ -3,6 +3,7 @@ package io.github.prabhuomkar.pytorchandroid.helpers;
 import android.content.Context;
 import android.view.View;
 import android.widget.Button;
+import android.widget.TextView;
 
 import androidx.annotation.IdRes;
 import androidx.appcompat.app.ActionBar;
@@ -44,6 +45,17 @@ public class UIHelper {
             downloadButton.setVisibility(View.GONE);
         } else {
             downloadButton.setText(buttonText);
+        }
+    }
+
+    public static void updateModelDownloadProgress(View view, String percentage) {
+        TextView progressView =
+                (TextView) view.findViewById(R.id.list_model_item_download_progress);
+        if (percentage.equals("100%")) {
+            progressView.setVisibility(View.GONE);
+        } else {
+            progressView.setVisibility(View.VISIBLE);
+            progressView.setText(percentage);
         }
     }
 

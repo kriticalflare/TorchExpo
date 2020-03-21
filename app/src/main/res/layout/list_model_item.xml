@@ -93,6 +93,18 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="16dp">
 
+        <TextView
+            android:id="@+id/list_model_item_download_progress"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:layout_marginEnd="16dp"
+            android:layout_toStartOf="@+id/list_model_item_download"
+            android:text="99%"
+            android:textColor="@color/colorAccent"
+            android:textSize="18sp"
+            android:visibility="gone" />
+
         <Button
             android:id="@+id/list_model_item_download"
             style="@style/ButtonTheme"
