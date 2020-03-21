@@ -86,6 +86,17 @@
             android:textColor="@color/colorPyTorch3"
             android:textSize="16sp" />
 
+        <TextView
+            android:id="@+id/list_model_item_size"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:drawableStart="@drawable/ic_file"
+            android:drawablePadding="8dp"
+            android:text="100 MB"
+            android:textColor="@color/colorPyTorch3"
+            android:textSize="16sp" />
+
     </LinearLayout>
 
     <RelativeLayout

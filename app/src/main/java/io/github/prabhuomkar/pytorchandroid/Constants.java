@@ -8,6 +8,11 @@ import io.github.prabhuomkar.pytorchandroid.models.Task;
 public class Constants {
     // Global Defaults
     public static final String PLACEHOLDER_IMAGE_NAME = "pytorch_placeholder";
+    public static final String BUTTON_STATE_DOWNLOAD = "Download";
+    public static final String BUTTON_STATE_DOWNLOADING = "Downloading...";
+    public static final String BUTTON_STATE_CANCEL = "Cancel";
+    public static final String BUTTON_STATE_DONE = "Done";
+    public static final String DOWNLOAD_PROGRESS_STATE_DONE = "100.00%";
     // Home Activity
     public static final String CONTACT_EMAIL = "prabhuomkar@pm.me";
     public static final String HELP_URL = "https://github.com/prabhuomkar/pytorch-android";
@@ -30,20 +35,20 @@ public class Constants {
     // Models specific to tasks
     public static final ArrayList<Model> TASK_IMAGE_CLASSIFICATION_MODELS = new ArrayList<Model>() {
         {
-            add(new Model("AlexNet", "The 2012 ImageNet winner achieved a top-5 error of 15.3%," +
-                    " more than 10.8 percentage points lower than that of the runner up.",
-                    "https://arxiv.org/abs/1404.5997", "https://pytorch.org/hub/pytorch_vision_alexnet/",
-                    "https://github.com/pytorch/android-demo-app/raw/master/HelloWorldApp/app/src/main/assets/model.pt",
-                    "https://pytorch.org/assets/images/alexnet2.png"));
             add(new Model("ResNet-18", "Next generation ResNets, more efficient and accurate",
                     "https://arxiv.org/abs/1512.03385", "https://pytorch.org/hub/pytorch_vision_resnext/",
-                    "https://github.com/pytorch/android-demo-app/raw/master/HelloWorldApp/app/src/main/assets/model.pt",
-                    "https://pytorch.org/assets/images/resnet.png"));
+                    "https://rebrand.ly/pytorch-android-resnet-18",
+                    "https://pytorch.org/assets/images/resnet.png", 47));
             add(new Model("GoogleNet", "GoogLeNet was based on a deep convolutional neural network " +
                     "architecture codenamed \"Inception\" which won ImageNet 2014.",
                     "https://arxiv.org/abs/1409.4842", "https://pytorch.org/hub/pytorch_vision_googlenet/",
-                    "https://github.com/pytorch/android-demo-app/raw/master/HelloWorldApp/app/src/main/assets/model.pt",
-                    "https://pytorch.org/assets/images/googlenet2.png"));
+                    "https://rebrand.ly/pytorch-android-googlenet",
+                    "https://pytorch.org/assets/images/googlenet2.png", 27));
+            add(new Model("AlexNet", "The 2012 ImageNet winner achieved a top-5 error of 15.3%," +
+                    " more than 10.8 percentage points lower than that of the runner up.",
+                    "https://arxiv.org/abs/1404.5997", "https://pytorch.org/hub/pytorch_vision_alexnet/",
+                    "https://rebrand.ly/pytorch-android-alexnet",
+                    "https://pytorch.org/assets/images/alexnet2.png", 244));
         }
     };
 }

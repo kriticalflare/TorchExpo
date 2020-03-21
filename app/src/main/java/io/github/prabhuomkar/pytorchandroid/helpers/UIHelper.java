@@ -14,6 +14,7 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import java.util.Objects;
 
+import io.github.prabhuomkar.pytorchandroid.Constants;
 import io.github.prabhuomkar.pytorchandroid.R;
 
 public class UIHelper {
@@ -51,7 +52,7 @@ public class UIHelper {
     public static void updateModelDownloadProgress(View view, String percentage) {
         TextView progressView =
                 (TextView) view.findViewById(R.id.list_model_item_download_progress);
-        if (percentage.equals("100%")) {
+        if (percentage.equals(Constants.DOWNLOAD_PROGRESS_STATE_DONE)) {
             progressView.setVisibility(View.GONE);
         } else {
             progressView.setVisibility(View.VISIBLE);

@@ -12,4 +12,6 @@
     <string name="menu_app_info">App Info</string>
     <string name="cd_pytorch_logo">PyTorch</string>
     <string name="task_image_classification">Image Classification</string>
+    <!-- Task Fragment !-->
+    <string name="model_size">%1$dMB</string>
 </resources>

@@ -17,9 +17,11 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import java.util.List;
 
+import io.github.prabhuomkar.pytorchandroid.Constants;
 import io.github.prabhuomkar.pytorchandroid.R;
 import io.github.prabhuomkar.pytorchandroid.helpers.DownloadHelper;
 import io.github.prabhuomkar.pytorchandroid.helpers.FileHelper;
+import io.github.prabhuomkar.pytorchandroid.helpers.UIHelper;
 import io.github.prabhuomkar.pytorchandroid.models.Model;
 import io.github.prabhuomkar.pytorchandroid.playground.ImageClassificationActivity;
 
@@ -48,6 +50,8 @@ public class ModelListAdapter extends RecyclerView.Adapter<ModelListAdapter.Mode
         holder.modelDescriptionView.setText(currentModel.getDescription());
         holder.modelPaperLinkView.setText(currentModel.getPaperLink());
         holder.modelSourceLinkView.setText(currentModel.getSourceLink());
+        holder.modelSizeView.setText(context.getString(R.string.model_size,
+                currentModel.getSize()));
         if (FileHelper.checkIfFileExists(FileHelper.getAssetModelFilePath(context,
                 currentModel.getName()))) {
             holder.modelDownloadButton.setVisibility(View.GONE);
@@ -64,7 +68,8 @@ public class ModelListAdapter extends RecyclerView.Adapter<ModelListAdapter.Mode
     public class ModelView extends RecyclerView.ViewHolder {
 
         RecyclerViewClickListener clickListener;
-        TextView modelNameView, modelDescriptionView, modelPaperLinkView, modelSourceLinkView;
+        TextView modelNameView, modelDescriptionView, modelPaperLinkView, modelSourceLinkView,
+                modelSizeView;
         ImageView modelImageView;
         Button modelDownloadButton, modelRunButton;
 
@@ -80,6 +85,8 @@ public class ModelListAdapter extends RecyclerView.Adapter<ModelListAdapter.Mode
                     .findViewById(R.id.list_model_item_paperlink);
             modelSourceLinkView = (TextView) itemView
                     .findViewById(R.id.list_model_item_sourcelink);
+            modelSizeView = (TextView) itemView
+                    .findViewById(R.id.list_model_item_size);
             modelDownloadButton = (Button) itemView
                     .findViewById(R.id.list_model_item_download);
             modelRunButton = (Button) itemView
@@ -95,13 +102,15 @@ public class ModelListAdapter extends RecyclerView.Adapter<ModelListAdapter.Mode
             modelDownloadButton.setOnClickListener(v -> {
                 String fileName = FileHelper.getAssetFileNameForModel(
                         modelList.get(getAdapterPosition()).getName());
-                if (((Button) v).getText().equals("Cancel")) {
-                    DownloadHelper.cancelDownload(fileName);
-                } else {
+                String buttonText = ((Button) v).getText().toString();
+                if (buttonText.equals(Constants.BUTTON_STATE_DOWNLOAD)) {
+                    UIHelper.updateModelDownloadButton(itemView, Constants.BUTTON_STATE_DOWNLOADING);
                     DownloadHelper.downloadModel(context, itemView,
                             modelList.get(getAdapterPosition()).getDownloadLink(),
                             FileHelper.getDownloadDirPath(context),
                             fileName);
+                } else if (buttonText.equals(Constants.BUTTON_STATE_CANCEL)) {
+                    DownloadHelper.cancelDownload(fileName);
                 }
             });
             modelRunButton.setOnClickListener(v -> {

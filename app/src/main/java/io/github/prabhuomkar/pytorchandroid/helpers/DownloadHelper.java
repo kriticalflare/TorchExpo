@@ -9,6 +9,8 @@ import com.downloader.Error;
 import com.downloader.OnDownloadListener;
 import com.downloader.PRDownloader;
 
+import io.github.prabhuomkar.pytorchandroid.Constants;
+
 public class DownloadHelper {
 
     public static int downloadModel(Context context, View view,
@@ -17,31 +19,31 @@ public class DownloadHelper {
                 .setTag(fileName)
                 .build()
                 .setOnCancelListener(() -> {
-                    UIHelper.updateModelDownloadButton(view, "Download");
-                    UIHelper.updateModelDownloadProgress(view, "100%");
+                    UIHelper.updateModelDownloadButton(view, Constants.BUTTON_STATE_DOWNLOAD);
+                    UIHelper.updateModelDownloadProgress(view, Constants.DOWNLOAD_PROGRESS_STATE_DONE);
                 })
                 .setOnProgressListener(progress -> {
                     @SuppressLint("DefaultLocale") String percentage =
                             String.format("%.2f", ((double) progress.currentBytes /
                                     (double) progress.totalBytes) * 100.0) + "%";
                     UIHelper.updateModelDownloadProgress(view, percentage);
-                    UIHelper.updateModelDownloadButton(view, "Cancel");
+                    UIHelper.updateModelDownloadButton(view, Constants.BUTTON_STATE_CANCEL);
                 })
                 .start(new OnDownloadListener() {
                     @Override
                     public void onDownloadComplete() {
                         Toast.makeText(context, "Model File: " + fileName +
                                 " downloaded successfully", Toast.LENGTH_SHORT).show();
-                        UIHelper.updateModelDownloadButton(view, "Done");
-                        UIHelper.updateModelDownloadProgress(view, "100%");
+                        UIHelper.updateModelDownloadButton(view, Constants.BUTTON_STATE_DONE);
+                        UIHelper.updateModelDownloadProgress(view, Constants.DOWNLOAD_PROGRESS_STATE_DONE);
                     }
 
                     @Override
                     public void onError(Error error) {
                         Toast.makeText(context, "Some error. Try again!",
                                 Toast.LENGTH_SHORT).show();
-                        UIHelper.updateModelDownloadButton(view, "Download");
-                        UIHelper.updateModelDownloadProgress(view, "100%");
+                        UIHelper.updateModelDownloadButton(view, Constants.BUTTON_STATE_DOWNLOAD);
+                        UIHelper.updateModelDownloadProgress(view, Constants.DOWNLOAD_PROGRESS_STATE_DONE);
                     }
                 });
     }
