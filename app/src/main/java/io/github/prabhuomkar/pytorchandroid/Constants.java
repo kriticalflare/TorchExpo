@@ -8,6 +8,10 @@ import io.github.prabhuomkar.pytorchandroid.models.Task;
 public class Constants {
     // Global Defaults
     public static final String PLACEHOLDER_IMAGE_NAME = "pytorch_placeholder";
+    public static final String PERMISSION_ERROR_MESSAGE = "PyTorch Android requires Camera " +
+            "Permission to capture images for classification & Storage Permission to download " +
+            "models";
+    public static final String PERMISSION_ERROR_TITLE = "Permission Required";
     // Home Activity
     public static final String CONTACT_EMAIL = "prabhuomkar@pm.me";
     public static final String HELP_URL = "https://github.com/prabhuomkar/pytorch-android";

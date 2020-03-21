@@ -52,11 +52,11 @@ Classification with State-Of-The-Art models _(like AlexNet, ResNet, etc.)_.
 ### Project Structure
 * [ui](app/src/main/java/io/github/prabhuomkar/pytorchandroid/ui) - 
 Contains UI related code like activities and fragments
-  * [activities](app/src/main/java/io/github/prabhuomkar/pytorchandroid/activities) - 
+  * [activities](app/src/main/java/io/github/prabhuomkar/pytorchandroid/ui/activities) - 
   Contains all android activities created
-  * [adapters](app/src/main/java/io/github/prabhuomkar/pytorchandroid/adapters) - 
+  * [adapters](app/src/main/java/io/github/prabhuomkar/pytorchandroid/ui/adapters) - 
   Contains all list adapters
-  * [fragments](app/src/main/java/io/github/prabhuomkar/pytorchandroid/fragments) - 
+  * [fragments](app/src/main/java/io/github/prabhuomkar/pytorchandroid/ui/fragments) - 
   Contains all android fragments used
 * [datasets](app/src/main/java/io/github/prabhuomkar/pytorchandroid/datasets) - 
 Contains classifier functions and target classes for datasets
@@ -64,6 +64,8 @@ Contains classifier functions and target classes for datasets
 Contains constants, helper functions for actions related to UI, Fragments, etc.
 * [models](app/src/main/java/io/github/prabhuomkar/pytorchandroid/models) - 
 Contains data models for several lists, fragments to display on the UI
+* [playground](app/src/main/java/io/github/prabhuomkar/pytorchandroid/playground) - 
+Contains code where UI, datasets and everything comes together for action
 
 ## Getting Started
 

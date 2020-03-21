@@ -7,11 +7,13 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.widget.Toast;
 
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
 import io.github.prabhuomkar.pytorchandroid.Constants;
 import io.github.prabhuomkar.pytorchandroid.R;
 import io.github.prabhuomkar.pytorchandroid.helpers.FragmentHelper;
+import io.github.prabhuomkar.pytorchandroid.helpers.PermissionsHelper;
 import io.github.prabhuomkar.pytorchandroid.helpers.UIHelper;
 import io.github.prabhuomkar.pytorchandroid.ui.fragments.AppInfoFragment;
 import io.github.prabhuomkar.pytorchandroid.ui.fragments.HomeFragment;
@@ -24,6 +26,7 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
         UIHelper.setCustomActionBar(MainActivity.this);
         FragmentHelper.switchFragment(new HomeFragment(), getSupportFragmentManager(), false);
+        PermissionsHelper.getPermissions(MainActivity.this);
     }
 
     @Override
@@ -55,6 +58,13 @@ public class MainActivity extends AppCompatActivity {
         }
 
         return super.onOptionsItemSelected(item);
+    }
+
+    @Override
+    public void onRequestPermissionsResult(int requestCode, @NonNull String[] permissions,
+                                           @NonNull int[] grantResults) {
+        PermissionsHelper.checkPermissions(MainActivity.this,
+                requestCode, permissions, grantResults);
     }
 
 }

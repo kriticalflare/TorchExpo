@@ -95,7 +95,7 @@
 
         <Button
             android:id="@+id/list_model_item_download"
-            style="@style/PyTorchButtonTheme"
+            style="@style/ButtonTheme"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginEnd="16dp"
@@ -104,7 +104,7 @@
 
         <Button
             android:id="@+id/list_model_item_run"
-            style="@style/PyTorchButtonTheme"
+            style="@style/ButtonTheme"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_alignParentEnd="true"
