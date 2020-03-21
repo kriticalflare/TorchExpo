@@ -16,4 +16,11 @@
 
     </androidx.core.widget.NestedScrollView>
 
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:text="@string/looking_for_contributions"
+        android:textSize="16sp" />
+
 </FrameLayout>

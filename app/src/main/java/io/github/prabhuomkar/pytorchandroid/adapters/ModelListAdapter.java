@@ -6,8 +6,10 @@ import android.net.Uri;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
@@ -33,13 +35,7 @@ public class ModelListAdapter extends RecyclerView.Adapter<ModelListAdapter.Mode
         this.context = (AppCompatActivity) parent.getContext();
         View modelItemView = LayoutInflater.from(context)
                 .inflate(R.layout.list_model_item, parent, false);
-
-        // clickListener implements the action to switch to specific action related activity
-        RecyclerViewClickListener clickListener = (view, position) -> {
-            // Switch activity
-        };
-
-        return new ModelListAdapter.ModelView(modelItemView, clickListener);
+        return new ModelListAdapter.ModelView(modelItemView);
     }
 
     @Override
@@ -49,6 +45,7 @@ public class ModelListAdapter extends RecyclerView.Adapter<ModelListAdapter.Mode
         holder.modelDescriptionView.setText(currentModel.getDescription());
         holder.modelPaperLinkView.setText(currentModel.getPaperLink());
         holder.modelSourceLinkView.setText(currentModel.getSourceLink());
+        // TODO: Load model architecture images using Picasso
     }
 
     @Override
@@ -57,13 +54,14 @@ public class ModelListAdapter extends RecyclerView.Adapter<ModelListAdapter.Mode
     }
 
 
-    public class ModelView extends RecyclerView.ViewHolder implements View.OnClickListener {
+    public class ModelView extends RecyclerView.ViewHolder {
 
         RecyclerViewClickListener clickListener;
         TextView modelNameView, modelDescriptionView, modelPaperLinkView, modelSourceLinkView;
         ImageView modelImageView;
+        Button modelDownloadButton;
 
-        public ModelView(@NonNull View itemView, RecyclerViewClickListener listener) {
+        public ModelView(@NonNull View itemView) {
             super(itemView);
             modelImageView = (ImageView) itemView
                     .findViewById(R.id.list_model_item_image);
@@ -75,27 +73,16 @@ public class ModelListAdapter extends RecyclerView.Adapter<ModelListAdapter.Mode
                     .findViewById(R.id.list_model_item_paperlink);
             modelSourceLinkView = (TextView) itemView
                     .findViewById(R.id.list_model_item_sourcelink);
-            clickListener = listener;
-            itemView.setOnClickListener(this);
-            modelPaperLinkView.setOnClickListener(new View.OnClickListener() {
-                @Override
-                public void onClick(View v) {
-                    context.startActivity(new Intent(Intent.ACTION_VIEW,
-                            Uri.parse(modelList.get(getAdapterPosition()).getPaperLink())));
-                }
-            });
-            modelSourceLinkView.setOnClickListener(new View.OnClickListener() {
-                @Override
-                public void onClick(View v) {
-                    context.startActivity(new Intent(Intent.ACTION_VIEW,
-                            Uri.parse(modelList.get(getAdapterPosition()).getSourceLink())));
-                }
-            });
-        }
-
-        @Override
-        public void onClick(View v) {
-            clickListener.onClick(v, getAdapterPosition());
+            modelDownloadButton = (Button) itemView
+                    .findViewById(R.id.list_model_item_download);
+            modelPaperLinkView.setOnClickListener(v -> context.startActivity(
+                    new Intent(Intent.ACTION_VIEW,
+                            Uri.parse(modelList.get(getAdapterPosition()).getPaperLink()))));
+            modelSourceLinkView.setOnClickListener(v -> context.startActivity(
+                    new Intent(Intent.ACTION_VIEW,
+                            Uri.parse(modelList.get(getAdapterPosition()).getSourceLink()))));
+            modelDownloadButton.setOnClickListener(v ->
+                    Toast.makeText(context, "Downloading Model", Toast.LENGTH_SHORT).show());
         }
     }
 }

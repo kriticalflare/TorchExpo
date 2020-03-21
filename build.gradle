@@ -8,6 +8,7 @@ buildscript {
     ext.rv_version         = '1.1.0'
     ext.rv_sel_version     = '1.1.0-rc01'
     ext.camerax_version    = '1.0.0-beta01'
+    ext.picasso_version    = '2.71828'
     repositories {
         google()
         jcenter()
