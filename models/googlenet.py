@@ -4,7 +4,7 @@ import torchvision
 
 
 # laod alexnet model
-model = torchvision.models.alexnet(pretrained=True)
+model = torchvision.models.googlenet(pretrained=True)
 model.eval()
 # example tensor as input
 example = torch.rand(1, 3, 224, 224)
