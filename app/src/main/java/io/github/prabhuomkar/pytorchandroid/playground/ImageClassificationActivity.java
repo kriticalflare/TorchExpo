@@ -56,6 +56,8 @@ public class ImageClassificationActivity extends AppCompatActivity {
             startCamera();
         } else {
             PermissionsHelper.getPermissions(ImageClassificationActivity.this);
+            Toast.makeText(ImageClassificationActivity.this, Constants.ERR_PERMISSION_TITLE,
+                    Toast.LENGTH_SHORT).show();
         }
     }
 
