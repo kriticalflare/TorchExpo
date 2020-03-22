@@ -4,10 +4,6 @@
 -dontskipnonpubliclibraryclassmembers
 -dontpreverify
 -verbose
--dump class_files.txt
--printseeds seeds.txt
--printusage unused.txt
--printmapping mapping.txt
 -optimizations !code/simplification/arithmetic,!field/*,!class/merging/*
 
 -allowaccessmodification
@@ -15,3 +11,7 @@
 -renamesourcefileattribute SourceFile
 -keepattributes SourceFile,LineNumberTable
 -repackageclasses ''
+
+-dontwarn javax.annotation.Nullable
+-keep class org.pytorch.** { *; }
+-keep class com.facebook.jni.** { *; }
