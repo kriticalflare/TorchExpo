@@ -45,9 +45,6 @@ Classification with State-Of-The-Art models _(like AlexNet, ResNet, etc.)_.
 
 ### Built With
 * [PyTorch](https://pytorch.org) & [PyTorch Android API](https://pytorch.org/mobile/android/)
-* [Python 3](https://www.python.org/download/releases/3.0/)
-* [Java 1.8](https://www.java.com/en/download/)
-* [Android Studio](https://developer.android.com/studio)
 
 ### Project Structure
 * [ui](app/src/main/java/io/github/prabhuomkar/pytorchandroid/ui) - 
@@ -70,14 +67,32 @@ Contains code where UI, datasets and everything comes together for action
 ## Getting Started
 
 ### Prerequisites
-TODO: Add better prerequisites which are required for an Android application
-TODO: Describe about usage of Machine Learning models
+* [Python 3](https://www.python.org/download/releases/3.0/)
+* [Java 1.8](https://www.java.com/en/download/)
+* [Android Studio](https://developer.android.com/studio)
 
 ### Installation
-TODO: Add step by step installation guide to download, install dependencies and run the app
-
+* Git clone this/forked repository
+```shell script
+git clone git@github.com:prabhuomkar/pytorch-android.git
+OR
+git clone git@github.com:<GITHUB_USERNAME>/pytorch-android.git
+```
+* For Android Stuff:
+  * Open this project with **Android Studio**
+  * Build the project by installing Gradle dependencies
+* For Machine Learning Stuff:
+  * Install the Python dependencies:
+    ```shell script
+    cd models
+    pip install -r requirements.txt
+    ```
 ## Usage
-TODO: Add demos to play with the tasks and its models
+* For downloading and converting pre-trained models into torchscript module:
+```shell script
+cd models
+python <model_name>.py
+```
 
 ## Contributing
 We appreciate all contributions. If you are planning to contribute back bug-fixes, please do so
