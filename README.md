@@ -5,7 +5,7 @@
  Android application with collection of machine learning experiments using PyTorch Android API
  <br />
  <br />
- <img src="https://img.shields.io/github/license/prabhuomkar/pytorch-android?style=flat-square"
+ <img src="https://img.shields.io/github/license/prabhuomkar/Flare?style=flat-square"
     alt="License">
  <img src="https://img.shields.io/badge/pytorch_android-1.4-%23ee4c2c?style=flat-square"
     alt="PyTorch Android">
@@ -39,7 +39,7 @@ can add PyTorch's Gradle dependencies and can run inferences.
 _[Read more](https://pytorch.org/mobile/android/)_
 
 ## About
-PyTorch Android is an android application which contains collection of machine learning experiments
+Flare is an android application which contains collection of machine learning experiments
 built using PyTorch and its Android API. This application will allow you to try tasks like Image
 Classification with State-Of-The-Art models _(like AlexNet, ResNet, etc.)_.
 
@@ -47,21 +47,21 @@ Classification with State-Of-The-Art models _(like AlexNet, ResNet, etc.)_.
 * [PyTorch](https://pytorch.org) & [PyTorch Android API](https://pytorch.org/mobile/android/)
 
 ### Project Structure
-* [ui](app/src/main/java/io/github/prabhuomkar/pytorchandroid/ui) - 
+* [ui](app/src/main/java/io/github/prabhuomkar/flare/ui) - 
 Contains UI related code like activities and fragments
-  * [activities](app/src/main/java/io/github/prabhuomkar/pytorchandroid/ui/activities) - 
+  * [activities](app/src/main/java/io/github/prabhuomkar/flare/ui/activities) - 
   Contains all android activities created
-  * [adapters](app/src/main/java/io/github/prabhuomkar/pytorchandroid/ui/adapters) - 
+  * [adapters](app/src/main/java/io/github/prabhuomkar/flare/ui/adapters) - 
   Contains all list adapters
-  * [fragments](app/src/main/java/io/github/prabhuomkar/pytorchandroid/ui/fragments) - 
+  * [fragments](app/src/main/java/io/github/prabhuomkar/flare/ui/fragments) - 
   Contains all android fragments used
-* [datasets](app/src/main/java/io/github/prabhuomkar/pytorchandroid/datasets) - 
+* [datasets](app/src/main/java/io/github/prabhuomkar/flare/datasets) - 
 Contains classifier functions and target classes for datasets
-* [helpers](app/src/main/java/io/github/prabhuomkar/pytorchandroid/helpers) - 
+* [helpers](app/src/main/java/io/github/prabhuomkar/flare/helpers) - 
 Contains constants, helper functions for actions related to UI, Fragments, etc.
-* [models](app/src/main/java/io/github/prabhuomkar/pytorchandroid/models) - 
+* [models](app/src/main/java/io/github/prabhuomkar/flare/models) - 
 Contains data models for several lists, fragments to display on the UI
-* [playground](app/src/main/java/io/github/prabhuomkar/pytorchandroid/playground) - 
+* [playground](app/src/main/java/io/github/prabhuomkar/flare/playground) - 
 Contains code where UI, datasets and everything comes together for action
 
 ## Getting Started
@@ -74,9 +74,9 @@ Contains code where UI, datasets and everything comes together for action
 ### Installation
 * Git clone this/forked repository
 ```shell script
-git clone git@github.com:prabhuomkar/pytorch-android.git
+git clone git@github.com:prabhuomkar/Flare.git
 OR
-git clone git@github.com:<GITHUB_USERNAME>/pytorch-android.git
+git clone git@github.com:<GITHUB_USERNAME>/Flare.git
 ```
 * For Android Stuff:
   * Open this project with **Android Studio**
