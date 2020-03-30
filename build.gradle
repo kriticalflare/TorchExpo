@@ -10,12 +10,14 @@ buildscript {
     ext.camerax_version    = '1.0.0-alpha06'
     ext.picasso_version    = '2.71828'
     ext.prdown_version     = '0.6.0'
+    ext.oss_version        = '16.0.0'
     repositories {
         google()
         jcenter()
     }
     dependencies {
         classpath 'com.android.tools.build:gradle:3.6.1'
+        classpath 'com.google.android.gms:oss-licenses-plugin:0.10.1'
     }
 }
 

@@ -29,11 +29,11 @@
 
     <ImageView
         android:id="@+id/app_info_image"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginHorizontal="32dp"
+        android:layout_width="120dp"
+        android:layout_height="120dp"
         android:adjustViewBounds="true"
         android:contentDescription="@string/cd_pytorch_logo"
+        android:padding="16dp"
         android:scaleType="centerCrop"
         android:src="@mipmap/ic_launcher_round"
         app:layout_constraintBottom_toBottomOf="parent"
