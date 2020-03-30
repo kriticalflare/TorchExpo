@@ -106,3 +106,4 @@ than you might be aware of.
 Please refer our [Contribution Guide](CONTRIBUTING.md) for more details.
 
 ## License
+This project is licensed under Apache-2.0 as given in [LICENSE](LICENSE) file.
