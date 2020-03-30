@@ -5,7 +5,9 @@
     <string name="app_info_copyright">© 2020 Omkar Prabhu</string>
     <string name="app_info_licenses"><u>LICENSES</u></string>
     <!-- Home Fragment !-->
-    <string name="looking_for_contributions">Looking for Contributions!</string>
+    <string name="looking_for_contributions"><p><b>Looking for Contributions!</b>\nMore tasks like
+        Image Segmentation, Image Generation, Text Classification &amp; Sentiment Analysis are
+    in roadmap!</p></string>
     <!-- Menus !-->
     <string name="menu_contact_us">Contact us</string>
     <string name="menu_github">GitHub</string>
