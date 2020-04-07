@@ -3,6 +3,7 @@ package io.github.prabhuomkar.flare.playground;
 import android.annotation.SuppressLint;
 import android.os.Bundle;
 import android.util.Pair;
+import android.view.MenuItem;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -38,7 +39,8 @@ public class ImageClassificationActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_image_classification);
-        UIHelper.setCustomActionBar(ImageClassificationActivity.this);
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+        UIHelper.updateActionBar(this, "Image Classification", true);
         modelName = Objects.requireNonNull(getIntent().getExtras()).getString("modelName");
 
         modelNameView = (TextView) findViewById(R.id.image_classifier_model_name);
@@ -105,6 +107,16 @@ public class ImageClassificationActivity extends AppCompatActivity {
             resultClass2.setText(Target.IMAGENET_TARGET_CLASSES[second.first]);
             resultClass3.setText(Target.IMAGENET_TARGET_CLASSES[third.first]);
         }
+    }
+
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+        int id = item.getItemId();
+        if (id == android.R.id.home) {
+            onBackPressed();
+            return true;
+        }
+        return super.onOptionsItemSelected(item);
     }
 
 }

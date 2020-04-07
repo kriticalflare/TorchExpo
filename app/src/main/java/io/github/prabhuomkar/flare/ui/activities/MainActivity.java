@@ -14,7 +14,6 @@ import io.github.prabhuomkar.flare.Constants;
 import io.github.prabhuomkar.flare.R;
 import io.github.prabhuomkar.flare.helpers.FragmentHelper;
 import io.github.prabhuomkar.flare.helpers.PermissionsHelper;
-import io.github.prabhuomkar.flare.helpers.UIHelper;
 import io.github.prabhuomkar.flare.ui.fragments.AppInfoFragment;
 import io.github.prabhuomkar.flare.ui.fragments.HomeFragment;
 
@@ -24,7 +23,7 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        UIHelper.setCustomActionBar(MainActivity.this);
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
         FragmentHelper.switchFragment(new HomeFragment(), getSupportFragmentManager(), false);
         PermissionsHelper.getPermissions(MainActivity.this);
     }
@@ -38,12 +37,10 @@ public class MainActivity extends AppCompatActivity {
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
         int id = item.getItemId();
-
         if (id == R.id.action_contact) {
             // Send an email to Authors/Maintainers
-            Intent emailIntent = new Intent(Intent.ACTION_SEND);
-            emailIntent.setData(Uri.parse("mailto:"));
-            emailIntent.putExtra(Intent.EXTRA_EMAIL, new String[]{Constants.CONTACT_EMAIL});
+            Intent emailIntent = new Intent(Intent.ACTION_SENDTO, Uri.fromParts(
+                    "mailto", Constants.CONTACT_EMAIL, null));
             try {
                 startActivity(Intent.createChooser(emailIntent, "Contact Flare"));
             } catch (android.content.ActivityNotFoundException e) {
@@ -55,8 +52,10 @@ public class MainActivity extends AppCompatActivity {
         } else if (id == R.id.action_app_info) {
             // Open App Info
             FragmentHelper.switchFragment(new AppInfoFragment(), getSupportFragmentManager(), true);
+        } else if (id == android.R.id.home) {
+            onBackPressed();
+            return true;
         }
-
         return super.onOptionsItemSelected(item);
     }
 

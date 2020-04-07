@@ -20,6 +20,7 @@ public class HomeFragment extends Fragment {
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
+        UIHelper.updateActionBar(getActivity(), "Home", false);
         View homeView = inflater.inflate(R.layout.fragment_home, container, false);
         Context context = homeView.getContext();
 

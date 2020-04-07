@@ -8,6 +8,7 @@ import android.widget.TextView;
 import androidx.annotation.IdRes;
 import androidx.appcompat.app.ActionBar;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.fragment.app.FragmentActivity;
 import androidx.recyclerview.widget.DividerItemDecoration;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
@@ -19,11 +20,12 @@ import io.github.prabhuomkar.flare.R;
 
 public class UIHelper {
 
-    public static void setCustomActionBar(AppCompatActivity appCompatActivity) {
-        ActionBar actionBar = appCompatActivity.getSupportActionBar();
-        Objects.requireNonNull(actionBar)
-                .setDisplayOptions(ActionBar.DISPLAY_SHOW_CUSTOM);
-        actionBar.setCustomView(R.layout.custom_action_bar);
+    public static void updateActionBar(FragmentActivity fragmentActivity, String title,
+                                       boolean showBackButton) {
+        ActionBar actionBar = ((AppCompatActivity) fragmentActivity).getSupportActionBar();
+        Objects.requireNonNull(actionBar).setDisplayHomeAsUpEnabled(false);
+        actionBar.setTitle(title);
+        actionBar.setDisplayHomeAsUpEnabled(showBackButton);
     }
 
     public static void setupRecyclerView(View rootView, Context context, @IdRes int id,

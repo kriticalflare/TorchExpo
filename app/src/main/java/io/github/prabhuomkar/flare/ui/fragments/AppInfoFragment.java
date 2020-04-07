@@ -14,11 +14,13 @@ import com.google.android.gms.oss.licenses.OssLicensesMenuActivity;
 
 import io.github.prabhuomkar.flare.R;
 import io.github.prabhuomkar.flare.helpers.DataHelper;
+import io.github.prabhuomkar.flare.helpers.UIHelper;
 
 public class AppInfoFragment extends Fragment {
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
+        UIHelper.updateActionBar(getActivity(), "App Info", true);
         View appInfoView = inflater.inflate(R.layout.fragment_app_info, container, false);
 
         TextView licensesView = (TextView) appInfoView.findViewById(R.id.app_info_licenses);
