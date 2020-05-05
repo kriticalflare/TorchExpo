@@ -42,7 +42,7 @@ public class MainActivity extends AppCompatActivity {
             Intent emailIntent = new Intent(Intent.ACTION_SENDTO, Uri.fromParts(
                     "mailto", Constants.CONTACT_EMAIL, null));
             try {
-                startActivity(Intent.createChooser(emailIntent, "Contact Flare"));
+                startActivity(Intent.createChooser(emailIntent, "Contact TorchExpo"));
             } catch (android.content.ActivityNotFoundException e) {
                 Toast.makeText(MainActivity.this, Constants.ERR_NO_EMAIL_CLIENT, Toast.LENGTH_SHORT).show();
             }

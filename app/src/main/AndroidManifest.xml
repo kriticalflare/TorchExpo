@@ -15,9 +15,11 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name="io.github.prabhuomkar.flare.playground.ImageClassificationActivity" />
+        <activity android:name=".ui.playground.ImageSegmentationActivity"></activity>
+        <activity android:name=".ui.playground.ImageClassificationCanvasActivity" />
+        <activity android:name=".ui.playground.ImageClassificationActivity" />
         <activity
-            android:name="io.github.prabhuomkar.flare.ui.activities.MainActivity"
+            android:name=".ui.activities.MainActivity"
             android:screenOrientation="portrait"
             tools:ignore="LockedOrientationActivity">
             <intent-filter>

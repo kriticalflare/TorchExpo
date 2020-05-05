@@ -1,6 +1,6 @@
 ---
 name: "🚀 Feature Request"
-about: Submit a proposal/request for a new Flare feature
+about: Submit a proposal/request for a new TorchExpo feature
 ---
 
 ## 🚀 Feature

@@ -1,6 +1,6 @@
 ---
 name: "🐛 Bug Report"
-about: Submit a bug report to help us improve Flare
+about: Submit a bug report to help us improve TorchExpo
 labels: bug
 ---
 
@@ -26,7 +26,7 @@ Steps to reproduce the behavior:
 
  - Android API Level (e.g. 21, 26, etc.)
  - Device Name (e.g. Motorola, Samsung, etc.):
- - How did you install Flare (e.g. PlayStore, GitHub Source):
+ - How did you install TorchExpo (e.g. PlayStore, GitHub Source):
  - Java Version: 
  - Any other relevant information: 
 

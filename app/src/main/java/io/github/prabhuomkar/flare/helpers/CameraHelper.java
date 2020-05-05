@@ -9,8 +9,8 @@ import androidx.camera.core.ImageAnalysisConfig;
 import androidx.camera.core.Preview;
 import androidx.camera.core.PreviewConfig;
 
-import io.github.prabhuomkar.flare.datasets.imagenet.Target;
-import io.github.prabhuomkar.flare.playground.AutoFitTextureView;
+import io.github.prabhuomkar.flare.engine.imageclassification.imagenet.Target;
+import io.github.prabhuomkar.flare.ui.playground.AutoFitTextureView;
 
 public class CameraHelper {
 

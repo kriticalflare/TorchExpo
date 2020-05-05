@@ -19,18 +19,20 @@ import java.util.List;
 
 import io.github.prabhuomkar.flare.Constants;
 import io.github.prabhuomkar.flare.R;
+import io.github.prabhuomkar.flare.helpers.DataHelper;
 import io.github.prabhuomkar.flare.helpers.DownloadHelper;
 import io.github.prabhuomkar.flare.helpers.FileHelper;
 import io.github.prabhuomkar.flare.helpers.UIHelper;
 import io.github.prabhuomkar.flare.models.Model;
-import io.github.prabhuomkar.flare.playground.ImageClassificationActivity;
 
 public class ModelListAdapter extends RecyclerView.Adapter<ModelListAdapter.ModelView> {
 
+    private String taskName;
     private List<Model> modelList;
     private Context context;
 
-    public ModelListAdapter(List<Model> modelList) {
+    public ModelListAdapter(String taskName, List<Model> modelList) {
+        this.taskName = taskName;
         this.modelList = modelList;
     }
 
@@ -49,7 +51,11 @@ public class ModelListAdapter extends RecyclerView.Adapter<ModelListAdapter.Mode
         holder.modelNameView.setText(currentModel.getName());
         holder.modelDescriptionView.setText(currentModel.getDescription());
         holder.modelPaperLinkView.setText(currentModel.getPaperLink());
+        if (currentModel.getPaperLink().equals(""))
+            holder.modelPaperLinkView.setVisibility(View.GONE);
         holder.modelSourceLinkView.setText(currentModel.getSourceLink());
+        if (currentModel.getSourceLink().equals(""))
+            holder.modelSourceLinkView.setVisibility(View.GONE);
         holder.modelSizeView.setText(context.getString(R.string.model_size,
                 currentModel.getSize()));
         if (FileHelper.checkIfFileExists(FileHelper.getAssetModelFilePath(context,
@@ -114,7 +120,8 @@ public class ModelListAdapter extends RecyclerView.Adapter<ModelListAdapter.Mode
                 }
             });
             modelRunButton.setOnClickListener(v -> {
-                Intent playgroundIntent = new Intent(context, ImageClassificationActivity.class);
+                Intent playgroundIntent = new Intent(context,
+                        DataHelper.getRunnerActivityForTask(taskName));
                 Bundle bundle = new Bundle();
                 bundle.putString("modelName", modelList.get(getAdapterPosition()).getName());
                 playgroundIntent.putExtras(bundle);

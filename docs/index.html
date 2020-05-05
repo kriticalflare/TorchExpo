@@ -7,38 +7,41 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="author" content="Omkar Prabhu">
-    <meta name="subject" content="Flare">
+    <meta name="subject" content="TorchExpo">
     <meta name="keywords"
-		  content="pytorch, android, flare, facebook, research, mobile, api, machine learning, deep learning, playstore">
+		  content="pytorch, android, torchexpo, facebook, research, mobile, api, machine learning, deep learning, playstore">
     <meta name="publisher" content="Omkar Prabhu">
-	<title>Flare</title>
+	<title>TorchExpo</title>
 	<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Work+Sans&display=swap">
-	<link rel="stylesheet" type="text/css" href="assets/style.css">
 	<link rel="icon" type="image/x-icon" href="assets/favicon.ico" >
+	<link rel="stylesheet" href="//unpkg.com/docsify/lib/themes/vue.css">
+	<style>
+		* {
+			--theme-color: #ee4c2c;
+		}
+		.sidebar p > a {
+			font-size: 15px !important;
+			font-weight: 700 !important;
+			color: #262626 !important;
+		}
+		.markdown-section pre > code {
+			padding: 1.5em 0.5em;
+		}
+	</style>
 </head>
 <body>
-<div class="main">
-	<div class="row">
-		<div class="col-xl-3 col-lg-4 col-sm-12 col-md-8 app-screen">
-			<img src="assets/app_screen.png">
-		</div>
-		<div class="col-xl-3 col-lg-4 col-sm-12 col-md-8 content-box">
-			<img src="assets/icon.png" class="logo">
-			<br>
-			<h2>Flare</h2>
-			<p>Android application with collection of machine learning experiments using PyTorch Android API</p>
-			<br>
-			<a class="link" href="https://github.com/prabhuomkar/Flare" target="_blank">Source Code</a>
-			<a class="link" href="https://github.com/prabhuomkar/Flare/releases"
-			   target="_blank">Releases
-			</a>
-			<a class="link" href="https://github.com/prabhuomkar/Flare/blob/master/CONTRIBUTING.md"
-			   target="_blank">Contributing Guide</a>
-		</div>
-	</div>
-	<br>
-	<br>
-	<p align="center">&copy; 2020 Omkar Prabhu</p>
-</div>
+	<div id="app"></div>
+	<script>
+		window.$docsify = {
+			name: 'TorchExpo',
+			repo: 'https://github.com/prabhuomkar/TorchExpo',
+			loadSidebar: true,
+			subMaxLevel: 1,
+			search: 'auto',
+			logo: '/assets/icon.png',
+		}
+	</script>
+	<script src="//unpkg.com/docsify/lib/docsify.min.js"></script>
+	<script src="//unpkg.com/docsify/lib/plugins/search.min.js"></script>
 </body>
 </html>

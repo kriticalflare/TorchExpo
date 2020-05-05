@@ -49,7 +49,9 @@ public class TaskFragment extends Fragment {
         View taskView = inflater.inflate(R.layout.fragment_task, container, false);
         Context context = taskView.getContext();
 
-        modelListAdapter = new ModelListAdapter(DataHelper.getModelListForTask(mTask.getName()));
+        String taskName = mTask.getName();
+        modelListAdapter =
+                new ModelListAdapter(taskName, DataHelper.getModelListForTask(taskName));
         UIHelper.setupRecyclerView(taskView, context, R.id.list_models, false, modelListAdapter);
 
         return taskView;

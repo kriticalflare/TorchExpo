@@ -27,7 +27,7 @@ public class AppInfoFragment extends Fragment {
         TextView versionView = (TextView) appInfoView.findViewById(R.id.app_info_version);
 
         try {
-            versionView.setText(DataHelper.getVersionName(appInfoView.getContext()));
+            versionView.setText(DataHelper.getVersionString(appInfoView.getContext()));
         } catch (PackageManager.NameNotFoundException e) {
             e.printStackTrace();
         }
