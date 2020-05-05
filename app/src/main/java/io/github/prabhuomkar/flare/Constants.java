@@ -39,6 +39,12 @@ public class Constants {
     // Models specific to tasks
     public static final ArrayList<Model> TASK_IMAGE_CLASSIFICATION_MODELS = new ArrayList<Model>() {
         {
+            add(new Model("MNIST CNN",
+                    "Convolutional Neural Networks for MNIST", "",
+                    "https://github.com/pytorch/examples/tree/master/mnist",
+                    "https://rebrand.ly/torchexpo-mnist-cnn",
+                    "https://3qeqpr26caki16dnhd19sv6by6v-wpengine.netdna-ssl" +
+                            ".com/wp-content/uploads/2019/02/Plot-of-a-Subset-of-Images-from-the-MNIST-Dataset.png", 5));
             add(new Model("ResNet-18",
                     "Next generation ResNets, more efficient and accurate",
                     "https://arxiv.org/abs/1512.03385",
