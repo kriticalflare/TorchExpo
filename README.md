@@ -1,5 +1,5 @@
 <h1 align="center">
- <img src="docs/assets/pytorch_logo.png" width="50%">
+ <img src="docs/assets/banner.png" width="50%">
 </h1>
 <p align="center">
  Android application with collection of machine learning experiments using PyTorch Android API
