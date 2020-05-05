@@ -18,7 +18,7 @@ PyTorch Mobile is an experiment release that provides APIs to build an end-to-en
 from Python to deployment on iOS and Android. [Read more](https://pytorch.org/mobile/home/)
 
 <p align="center">
-	<img src="assets/banner.png" width="75%">
+	<img src="assets/docs_banner.png" width="75%">
 </p>
 
 ### PyTorch Android API
