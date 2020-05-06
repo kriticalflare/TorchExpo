@@ -1,4 +1,4 @@
-package io.github.prabhuomkar.flare.ui.playground;
+package io.github.prabhuomkar.flare.ui.playground.customviews;
 
 import android.content.Context;
 import android.graphics.Matrix;
@@ -6,7 +6,6 @@ import android.util.AttributeSet;
 import android.view.TextureView;
 
 public class AutoFitTextureView extends TextureView {
-
 
     private int mCameraWidth = 0;
     private int mCameraHeight = 0;

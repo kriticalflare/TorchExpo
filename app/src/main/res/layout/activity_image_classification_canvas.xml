@@ -1,8 +1,201 @@
 <?xml version="1.0" encoding="utf-8"?>
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".ui.playground.ImageClassificationCanvasActivity">
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="16dp"
+        android:gravity="center"
+        android:orientation="vertical"
+        app:layout_constraintBottom_toTopOf="@id/image_classifier_details"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <io.github.prabhuomkar.flare.ui.playground.customviews.DrawingCanvasView
+            android:id="@+id/image_drawing_canvas"
+            android:layout_width="256dp"
+            android:layout_height="256dp"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentTop="true"
+            android:layout_gravity="center"
+            android:layout_marginBottom="16dp"
+            android:background="@color/colorPrimaryDark"
+            android:elevation="4dp" />
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:gravity="center_horizontal">
+
+            <Button
+                android:id="@+id/image_classifier_canvas_classify"
+                style="@style/ButtonTheme"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentStart="true"
+                android:layout_marginEnd="4dp"
+                android:text="Classify" />
+
+            <Button
+                android:id="@+id/image_classifier_canvas_reset"
+                style="@style/ButtonTheme"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentEnd="true"
+                android:layout_marginStart="4dp"
+                android:text="Reset" />
+
+        </RelativeLayout>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/image_classifier_details"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/colorPrimaryDark"
+        android:orientation="vertical"
+        android:padding="16dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/task_image_classification"
+            android:textColor="@android:color/white"
+            android:textSize="24sp" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Model:"
+                android:textColor="@android:color/white"
+                android:textSize="20sp" />
+
+            <TextView
+                android:id="@+id/image_classifier_model_name"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="8dp"
+                android:text="Digit -"
+                android:textColor="@color/colorAccent"
+                android:textSize="20sp" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/image_classifier_result_1"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:weightSum="1">
+
+            <TextView
+                android:id="@+id/image_classifier_result_1_class"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="16dp"
+                android:layout_weight="0.8"
+                android:ellipsize="end"
+                android:maxLines="1"
+                android:text="Digit -"
+                android:textColor="@color/colorPyTorch1"
+                android:textSize="20sp" />
+
+            <TextView
+                android:id="@+id/image_classifier_result_1_score"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="0.2"
+                android:ellipsize="end"
+                android:gravity="end"
+                android:maxLines="1"
+                android:text="0.00"
+                android:textColor="@color/colorPyTorch1"
+                android:textSize="20sp" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/image_classifier_result_2"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:weightSum="1">
+
+            <TextView
+                android:id="@+id/image_classifier_result_2_class"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="16dp"
+                android:layout_weight="0.8"
+                android:ellipsize="end"
+                android:maxLines="1"
+                android:text="Digit -"
+                android:textColor="@color/colorPyTorch2"
+                android:textSize="18sp" />
+
+            <TextView
+                android:id="@+id/image_classifier_result_2_score"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="0.2"
+                android:ellipsize="end"
+                android:gravity="end"
+                android:maxLines="1"
+                android:text="0.00"
+                android:textColor="@color/colorPyTorch2"
+                android:textSize="18sp" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/image_classifier_result_3"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:weightSum="1">
+
+            <TextView
+                android:id="@+id/image_classifier_result_3_class"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="16dp"
+                android:layout_weight="0.8"
+                android:ellipsize="end"
+                android:maxLines="1"
+                android:text="Digit -"
+                android:textColor="@color/colorPyTorch3"
+                android:textSize="18sp" />
+
+            <TextView
+                android:id="@+id/image_classifier_result_3_score"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="0.2"
+                android:ellipsize="end"
+                android:gravity="end"
+                android:maxLines="1"
+                android:text="0.00"
+                android:textColor="@color/colorPyTorch3"
+                android:textSize="18sp" />
+
+        </LinearLayout>
+
+    </LinearLayout>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

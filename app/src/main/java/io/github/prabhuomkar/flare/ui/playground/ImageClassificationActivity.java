@@ -25,6 +25,7 @@ import io.github.prabhuomkar.flare.engine.imageclassification.imagenet.Target;
 import io.github.prabhuomkar.flare.helpers.CameraHelper;
 import io.github.prabhuomkar.flare.helpers.PermissionsHelper;
 import io.github.prabhuomkar.flare.helpers.UIHelper;
+import io.github.prabhuomkar.flare.ui.playground.customviews.AutoFitTextureView;
 
 public class ImageClassificationActivity extends AppCompatActivity {
 

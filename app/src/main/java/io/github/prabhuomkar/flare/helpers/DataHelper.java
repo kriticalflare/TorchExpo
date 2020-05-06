@@ -1,6 +1,7 @@
 package io.github.prabhuomkar.flare.helpers;
 
 import android.content.Context;
+import android.content.Intent;
 import android.content.pm.PackageInfo;
 import android.content.pm.PackageManager;
 
@@ -9,6 +10,8 @@ import java.util.ArrayList;
 import io.github.prabhuomkar.flare.Constants;
 import io.github.prabhuomkar.flare.models.Model;
 import io.github.prabhuomkar.flare.ui.playground.ImageClassificationActivity;
+import io.github.prabhuomkar.flare.ui.playground.ImageClassificationCanvasActivity;
+import io.github.prabhuomkar.flare.ui.playground.ImageSegmentationActivity;
 
 public class DataHelper {
 
@@ -22,12 +25,14 @@ public class DataHelper {
         return null;
     }
 
-    public static java.lang.Class getRunnerActivityForTask(String taskName) {
-        switch (taskName) {
-            case Constants.TASK_IMAGE_CLASSIFICATION:
-                return ImageClassificationActivity.class;
-            case Constants.TASK_IMAGE_SEGMENTATION:
-                return null;
+    public static Intent getRunnerIntentForModel(Context context, String playgroundActivity) {
+        switch (playgroundActivity) {
+            case Constants.PLAYGROUND_IMAGE_CLASSIFICATION:
+                return new Intent(context, ImageClassificationActivity.class);
+            case Constants.PLAYGROUND_IMAGE_CLASSIFICATION_CANVAS:
+                return new Intent(context, ImageClassificationCanvasActivity.class);
+            case Constants.PLAYGROUND_IMAGE_SEGMENTATION:
+                return new Intent(context, ImageSegmentationActivity.class);
         }
         return null;
     }

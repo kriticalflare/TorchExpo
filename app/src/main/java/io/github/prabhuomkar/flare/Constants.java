@@ -36,35 +36,44 @@ public class Constants {
                     "prediction.", "task_image_segmentation"));
         }
     };
+    // Playground Activity Names
+    public static final String PLAYGROUND_IMAGE_CLASSIFICATION = "ImageClassification";
+    public static final String PLAYGROUND_IMAGE_CLASSIFICATION_CANVAS =
+            "ImageClassificationCanvas";
+    public static final String PLAYGROUND_IMAGE_SEGMENTATION = "ImageSegmentation";
     // Models specific to tasks
     public static final ArrayList<Model> TASK_IMAGE_CLASSIFICATION_MODELS = new ArrayList<Model>() {
         {
             add(new Model("MNIST CNN",
-                    "Convolutional Neural Networks for MNIST", "",
+                    "Simple Convolutional Neural Networks for Yann LeCun's MNIST Dataset", "",
                     "https://github.com/pytorch/examples/tree/master/mnist",
                     "https://rebrand.ly/torchexpo-mnist-cnn",
                     "https://3qeqpr26caki16dnhd19sv6by6v-wpengine.netdna-ssl" +
-                            ".com/wp-content/uploads/2019/02/Plot-of-a-Subset-of-Images-from-the-MNIST-Dataset.png", 5));
+                            ".com/wp-content/uploads/2019/02/Plot-of-a-Subset-of-Images-from-the-MNIST-Dataset.png",
+                    PLAYGROUND_IMAGE_CLASSIFICATION_CANVAS, 5));
             add(new Model("ResNet-18",
                     "Next generation ResNets, more efficient and accurate",
                     "https://arxiv.org/abs/1512.03385",
                     "https://pytorch.org/hub/pytorch_vision_resnext/",
                     "https://rebrand.ly/torchexpo-resnet-18",
-                    "https://pytorch.org/assets/images/resnet.png", 47));
+                    "https://pytorch.org/assets/images/resnet.png",
+                    PLAYGROUND_IMAGE_CLASSIFICATION, 47));
             add(new Model("GoogleNet",
                     "GoogLeNet was based on a deep convolutional neural network " +
                             "architecture codenamed \"Inception\" which won ImageNet 2014.",
                     "https://arxiv.org/abs/1409.4842",
                     "https://pytorch.org/hub/pytorch_vision_googlenet/",
                     "https://rebrand.ly/torchexpo-googlenet",
-                    "https://pytorch.org/assets/images/googlenet2.png", 27));
+                    "https://pytorch.org/assets/images/googlenet2.png",
+                    PLAYGROUND_IMAGE_CLASSIFICATION, 27));
             add(new Model("AlexNet",
                     "The 2012 ImageNet winner achieved a top-5 error of 15.3%," +
                             " more than 10.8 percentage points lower than that of the runner up.",
                     "https://arxiv.org/abs/1404.5997",
                     "https://pytorch.org/hub/pytorch_vision_alexnet/",
                     "https://rebrand.ly/torchexpo-alexnet",
-                    "https://pytorch.org/assets/images/alexnet2.png", 244));
+                    "https://pytorch.org/assets/images/alexnet2.png",
+                    PLAYGROUND_IMAGE_CLASSIFICATION, 244));
         }
     };
     public static final ArrayList<Model> TASK_IMAGE_SEGMENTATION_MODELS = new ArrayList<Model>() {
@@ -74,13 +83,15 @@ public class Constants {
                     "https://arxiv.org/abs/1706.05587",
                     "https://pytorch.org/hub/pytorch_vision_deeplabv3_resnet101/",
                     "https://rebrand.ly/torchexpo-deeplabv3-resnet101",
-                    "https://pytorch.org/assets/images/deeplab2.png", 245));
+                    "https://pytorch.org/assets/images/deeplab2.png",
+                    PLAYGROUND_IMAGE_SEGMENTATION, 245));
             add(new Model("FCN-ResNet101",
                     "Fully-Convolutional Network model with a ResNet-101 backbone for Semantic Segmentation",
                     "https://arxiv.org/abs/1411.4038",
                     "https://pytorch.org/hub/pytorch_vision_fcn_resnet101/",
                     "https://rebrand.ly/torchexpo-fcn-resnet101",
-                    "https://pytorch.org/assets/images/fcn2.png", 218));
+                    "https://pytorch.org/assets/images/fcn2.png",
+                    PLAYGROUND_IMAGE_SEGMENTATION, 218));
         }
     };
 }

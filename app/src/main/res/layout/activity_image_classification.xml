@@ -6,7 +6,7 @@
     android:layout_height="match_parent"
     tools:context=".ui.playground.ImageClassificationActivity">
 
-    <io.github.prabhuomkar.flare.ui.playground.AutoFitTextureView
+    <io.github.prabhuomkar.flare.ui.playground.customviews.AutoFitTextureView
         android:id="@+id/image_classifier_texture"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"

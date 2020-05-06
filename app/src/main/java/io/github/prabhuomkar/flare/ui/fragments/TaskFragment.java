@@ -45,7 +45,7 @@ public class TaskFragment extends Fragment {
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
-        UIHelper.updateActionBar(getActivity(), mTask.getName() + " Tasks", true);
+        UIHelper.updateActionBar(getActivity(), mTask.getName(), true);
         View taskView = inflater.inflate(R.layout.fragment_task, container, false);
         Context context = taskView.getContext();
 

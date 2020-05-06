@@ -120,8 +120,8 @@ public class ModelListAdapter extends RecyclerView.Adapter<ModelListAdapter.Mode
                 }
             });
             modelRunButton.setOnClickListener(v -> {
-                Intent playgroundIntent = new Intent(context,
-                        DataHelper.getRunnerActivityForTask(taskName));
+                Intent playgroundIntent = DataHelper.getRunnerIntentForModel(context,
+                        modelList.get(getAdapterPosition()).getPlaygroundActivity());
                 Bundle bundle = new Bundle();
                 bundle.putString("modelName", modelList.get(getAdapterPosition()).getName());
                 playgroundIntent.putExtras(bundle);
