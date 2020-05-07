@@ -90,4 +90,9 @@ if __name__ == "__main__":
         test(model, device, test_loader)
         scheduler.step()
 
-    torch.save(model.state_dict(), "../outputs/mnist.pt")
+    device = torch.device("cpu")
+    model.to(device)
+    example_image, example_label = next(iter(train_loader))
+    example_image, example_label = example_image.to(device), example_label.to(device)
+    traced_script_module = torch.jit.trace(model, example_image)
+    traced_script_module.save("../outputs/mnist_cnn.pt")
