@@ -11,7 +11,6 @@ import android.view.View;
 
 public class DrawingCanvasView extends View {
 
-    private Canvas mCanvas;
     private int mPaintColor = Color.WHITE;
     private Paint mPaint;
     private Path mPath = new Path();
@@ -40,7 +39,6 @@ public class DrawingCanvasView extends View {
 
     @Override
     protected void onDraw(Canvas canvas) {
-        if (mCanvas == null) mCanvas = canvas;
         canvas.drawPath(mPath, mPaint);
     }
 
