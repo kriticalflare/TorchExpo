@@ -11,7 +11,6 @@
     alt="PyTorch Android Version">
 </p>
 
-<!-- Table of Contents !-->
 * [About PyTorch Mobile](#about-pytorch-mobile)
 * [What is TorchExpo?](#what-is-torchexpo?)
 * [Getting Started](#getting-started)
