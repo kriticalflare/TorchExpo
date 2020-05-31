@@ -3,18 +3,19 @@
 - About TorchExpo
     
     - [Architecture](about/architecture.md)
+    - [Models](about/models.md)
     - [Examples](about/examples.md)
 
 
-- [Getting Started](getting-started.md)
+- Getting Started
     
+    - [Setup & Guidelines](getting-started/setup-guidelines.md)
     - [Intro to LibTorch](getting-started/intro-libtorch.md)
     - [Adding Task](getting-started/adding-task.md)
     - [Adding Model](getting-started/adding-model.md)
 
 - [Contributing Guide](contributing.md)
     
-    - [Setup & Guidelines](contributing/setup-guidelines.md)
     - [PR Checklist](contributing/pr-checklist.md)
 
 - [Play Store](https://rebrand.ly/torchexpo-android)

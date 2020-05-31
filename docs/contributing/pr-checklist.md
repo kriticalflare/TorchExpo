@@ -7,7 +7,6 @@
 * TODO: UI cross-check and build check
 
 ### PyTorch Models
-* TODO: Linting Code
-* TODO: Attached running experiment via Google Colab
-* TODO: Following the process of hosting models on Dropbox and URL shortener
-* TODO: Data shared with Android developers
+* Your `model` is added in the appropriate `<task_name>.ipynb`. If the `<task_name>.ipynb` doesn't exist, you have created a new notebook with `snake_case` naming convention.
+* You have tested your model output file locally and attached a `GitHub gist` or `Google Colab Notebook` link of the working demo in the PR.
+* You have added the entry of your model in `docs/about/models.md` under appropriate table and section.
