@@ -7,6 +7,7 @@ import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProviders
 import io.github.prabhuomkar.torchexpo.BuildConfig
+import io.github.prabhuomkar.torchexpo.R
 import io.github.prabhuomkar.torchexpo.databinding.AboutFragmentBinding
 
 class AboutFragment : Fragment() {
@@ -31,7 +32,7 @@ class AboutFragment : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-        binding.versionTextView.text = "v${BuildConfig.VERSION_NAME}"
+        binding.versionTextView.text = requireContext().getString(R.string.app_version, BuildConfig.VERSION_NAME)
     }
 
     override fun onActivityCreated(savedInstanceState: Bundle?) {

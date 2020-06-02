@@ -5,4 +5,5 @@
     <string name="app_description">Collection of machine learning experiments using PyTorch Android API</string>
     <string name="placeholder_version">v1.1</string>
     <string name="logo_content_description">App Logo</string>
+    <string name="app_version">v%1$s</string>
 </resources>
