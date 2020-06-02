@@ -1,8 +1,7 @@
 package io.github.prabhuomkar.torchexpo
 
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import io.github.prabhuomkar.torchexpo.ui.main.MainFragment
+import androidx.appcompat.app.AppCompatActivity
 
 class MainActivity : AppCompatActivity() {
 
