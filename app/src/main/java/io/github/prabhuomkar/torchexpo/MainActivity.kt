@@ -4,13 +4,12 @@ import android.os.Bundle
 import android.view.Menu
 import android.view.MenuInflater
 import android.view.MenuItem
+import androidx.appcompat.app.AppCompatActivity
 import androidx.navigation.findNavController
 import androidx.navigation.ui.AppBarConfiguration
 import androidx.navigation.ui.navigateUp
 import androidx.navigation.ui.onNavDestinationSelected
 import androidx.navigation.ui.setupActionBarWithNavController
-import io.github.prabhuomkar.torchexpo.ui.main.MainFragment
-import androidx.appcompat.app.AppCompatActivity
 
 class MainActivity : AppCompatActivity() {
 
