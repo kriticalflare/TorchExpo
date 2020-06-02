@@ -12,38 +12,34 @@
         android:id="@+id/bannerImageView"
         android:layout_width="match_parent"
         android:layout_height="128dp"
-        android:layout_marginTop="128dp"
+        android:layout_marginBottom="16dp"
         android:src="@mipmap/ic_launcher"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toTopOf="@id/aboutDescriptionTextView"/>
 
     <TextView
         android:id="@+id/aboutDescriptionTextView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="32dp"
         android:fontFamily="sans-serif"
         android:gravity="center"
         android:text="@string/app_description"
-        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.333"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/bannerImageView"
-        app:layout_constraintVertical_bias="0.109" />
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent" />
 
     <TextView
         android:id="@+id/versionTextView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="28dp"
+        android:layout_marginTop="16dp"
         android:text="@string/placeholder_version"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/aboutDescriptionTextView"
-        app:layout_constraintVertical_bias="0.289" />
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/aboutDescriptionTextView" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
