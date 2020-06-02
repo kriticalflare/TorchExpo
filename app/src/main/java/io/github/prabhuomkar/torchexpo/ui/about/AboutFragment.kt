@@ -40,4 +40,9 @@ class AboutFragment : Fragment() {
         viewModel = ViewModelProviders.of(this).get(AboutViewModel::class.java)
         // TODO: Use the ViewModel
     }
+
+    override fun onDestroyView() {
+        super.onDestroyView()
+        _binding = null
+    }
 }
