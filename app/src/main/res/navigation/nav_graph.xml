@@ -8,6 +8,20 @@
     <fragment
         android:id="@+id/mainFragment"
         android:name="io.github.prabhuomkar.torchexpo.ui.main.MainFragment"
-        android:label="main_fragment"
-        tools:layout="@layout/main_fragment" />
+        android:label="TorchExpo"
+        tools:layout="@layout/main_fragment" >
+        <action
+            android:id="@+id/action_mainFragment_to_aboutFragment"
+            app:destination="@id/aboutFragment"
+            app:enterAnim="@anim/nav_default_enter_anim"
+            app:exitAnim="@anim/nav_default_exit_anim"
+            app:popEnterAnim="@anim/nav_default_pop_enter_anim"
+            app:popExitAnim="@anim/nav_default_pop_exit_anim" />
+    </fragment>
+    <fragment
+        android:id="@+id/aboutFragment"
+        android:name="io.github.prabhuomkar.torchexpo.ui.about.AboutFragment"
+        android:label="About"
+        tools:layout="@layout/about_fragment" />
+
 </navigation>
