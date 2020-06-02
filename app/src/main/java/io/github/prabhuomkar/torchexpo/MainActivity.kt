@@ -1,5 +1,7 @@
 package io.github.prabhuomkar.torchexpo
 
+import android.content.Intent
+import android.net.Uri
 import android.os.Bundle
 import android.view.Menu
 import android.view.MenuInflater
@@ -32,9 +34,16 @@ class MainActivity : AppCompatActivity() {
         return super.onCreateOptionsMenu(menu)
     }
 
-    override fun onOptionsItemSelected(item: MenuItem): Boolean {
-        val navController = findNavController(R.id.nav_host_fragment)
-        return item.onNavDestinationSelected(navController) || super.onOptionsItemSelected(item)
+    override fun onOptionsItemSelected(item: MenuItem): Boolean = when (item.itemId) {
+        R.id.aboutFragment -> {
+            item.onNavDestinationSelected(findNavController(R.id.nav_host_fragment))
+            true
+        }
+        R.id.action_help -> {
+            startActivity(Intent(Intent.ACTION_VIEW, Uri.parse("https://github.com/prabhuomkar/TorchExpo")))
+            true
+        }
+        else -> super.onOptionsItemSelected(item)
     }
 
     override fun onSupportNavigateUp(): Boolean {
