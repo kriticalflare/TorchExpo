@@ -4,11 +4,10 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.TextView
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProviders
 import io.github.prabhuomkar.torchexpo.BuildConfig
-import io.github.prabhuomkar.torchexpo.R
+import io.github.prabhuomkar.torchexpo.databinding.AboutFragmentBinding
 
 class AboutFragment : Fragment() {
 
@@ -18,17 +17,21 @@ class AboutFragment : Fragment() {
     }
 
     private lateinit var viewModel: AboutViewModel
-    private lateinit var versionTextView: TextView
+    private var _binding: AboutFragmentBinding? = null
+    private val binding get() = _binding!!
 
     override fun onCreateView(
         inflater: LayoutInflater,
         container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        val view: View = inflater.inflate(R.layout.about_fragment, container, false)
-        versionTextView = view.findViewById<TextView>(R.id.versionTextView)
-        versionTextView.text = "v${BuildConfig.VERSION_NAME}"
-        return view
+        _binding = AboutFragmentBinding.inflate(inflater, container, false)
+        return binding.root
+    }
+
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        super.onViewCreated(view, savedInstanceState)
+        binding.versionTextView.text = "v${BuildConfig.VERSION_NAME}"
     }
 
     override fun onActivityCreated(savedInstanceState: Bundle?) {
