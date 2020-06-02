@@ -23,4 +23,5 @@
         android:name="io.github.prabhuomkar.torchexpo.ui.about.AboutFragment"
         android:label="About"
         tools:layout="@layout/about_fragment" />
+
 </navigation>
