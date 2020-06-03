@@ -1,7 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
-<menu xmlns:android="http://schemas.android.com/apk/res/android">
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
     <item
         android:id="@id/aboutFragment"
         android:title="@string/options_menu_about"
-        />
+        app:showAsAction="never"/>
+    <item
+        android:id="@+id/action_help"
+        android:title="@string/options_menu_github"
+        app:showAsAction="never" />
 </menu>
