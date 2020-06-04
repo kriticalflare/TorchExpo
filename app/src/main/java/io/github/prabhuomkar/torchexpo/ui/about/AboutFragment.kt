@@ -32,7 +32,8 @@ class AboutFragment : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-        binding.versionTextView.text = requireContext().getString(R.string.app_version, BuildConfig.VERSION_NAME)
+        binding.versionTextView.text =
+            requireContext().getString(R.string.app_version, BuildConfig.VERSION_NAME)
     }
 
     override fun onActivityCreated(savedInstanceState: Bundle?) {

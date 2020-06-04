@@ -9,7 +9,7 @@
         android:id="@+id/mainFragment"
         android:name="io.github.prabhuomkar.torchexpo.ui.main.MainFragment"
         android:label="TorchExpo"
-        tools:layout="@layout/main_fragment" >
+        tools:layout="@layout/main_fragment">
         <action
             android:id="@+id/action_mainFragment_to_aboutFragment"
             app:destination="@id/aboutFragment"
