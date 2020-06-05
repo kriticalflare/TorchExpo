@@ -1,11 +1,13 @@
 package io.github.prabhuomkar.torchexpo.ui.about
 
+import android.content.Intent
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
-import androidx.lifecycle.ViewModelProviders
+import androidx.lifecycle.ViewModelProvider
+import com.google.android.gms.oss.licenses.OssLicensesMenuActivity
 import io.github.prabhuomkar.torchexpo.BuildConfig
 import io.github.prabhuomkar.torchexpo.R
 import io.github.prabhuomkar.torchexpo.databinding.AboutFragmentBinding
@@ -34,11 +36,19 @@ class AboutFragment : Fragment() {
         super.onViewCreated(view, savedInstanceState)
         binding.versionTextView.text =
             requireContext().getString(R.string.app_version, BuildConfig.VERSION_NAME)
+        binding.licensesTextView.setOnClickListener { _ ->
+            startActivity(
+                Intent(
+                    activity,
+                    OssLicensesMenuActivity::class.java
+                )
+            )
+        }
     }
 
     override fun onActivityCreated(savedInstanceState: Bundle?) {
         super.onActivityCreated(savedInstanceState)
-        viewModel = ViewModelProviders.of(this).get(AboutViewModel::class.java)
+        viewModel = ViewModelProvider(this).get(AboutViewModel::class.java)
         // TODO: Use the ViewModel
     }
 
