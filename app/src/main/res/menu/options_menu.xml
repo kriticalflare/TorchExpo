@@ -9,4 +9,8 @@
         android:id="@+id/action_help"
         android:title="@string/options_menu_github"
         app:showAsAction="never" />
+    <item
+        android:id="@+id/action_contact"
+        android:title="@string/options_menu_contact_us"
+        app:showAsAction="never"/>
 </menu>

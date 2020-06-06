@@ -1,11 +1,13 @@
 package io.github.prabhuomkar.torchexpo
 
+import android.content.ActivityNotFoundException
 import android.content.Intent
 import android.net.Uri
 import android.os.Bundle
 import android.view.Menu
 import android.view.MenuInflater
 import android.view.MenuItem
+import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import androidx.navigation.findNavController
 import androidx.navigation.ui.AppBarConfiguration
@@ -43,9 +45,27 @@ class MainActivity : AppCompatActivity() {
             startActivity(
                 Intent(
                     Intent.ACTION_VIEW,
-                    Uri.parse("https://github.com/prabhuomkar/TorchExpo")
+                    Uri.parse(HELP_URL)
                 )
             )
+            true
+        }
+        R.id.action_contact -> {
+            val emailIntent = Intent(
+                Intent.ACTION_SENDTO, Uri.fromParts(
+                    "mailto", CONTACT_EMAIL, null
+                )
+            )
+            try {
+                startActivity(Intent.createChooser(emailIntent, "Contact TorchExpo"))
+            } catch (e: ActivityNotFoundException) {
+                Toast.makeText(
+                    this@MainActivity,
+                    this.getString(R.string.err_no_email_client),
+                    Toast.LENGTH_SHORT
+                )
+                    .show()
+            }
             true
         }
         else -> super.onOptionsItemSelected(item)
