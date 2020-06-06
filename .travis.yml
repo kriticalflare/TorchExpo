@@ -1,0 +1,25 @@
+language: android
+jdk: oraclejdk8
+sudo: false
+os: linux
+android:
+  components:
+    - tools
+    - platform-tools
+    - build-tools-29.0.3
+    - android-29
+    - addon-google_apis-google-29
+    - extra-google-m2repository
+    - extra-android-m2repository
+before_cache:
+  - rm -f $HOME/.gradle/caches/modules-2/modules-2.lock
+cache:
+  directories:
+    - $HOME/.m2
+    - $HOME/.gradle/caches/
+    - $HOME/.gradle/wrapper/
+    - "${TRAVIS_BUILD_DIR}/gradle/caches/"
+    - "${TRAVIS_BUILD_DIR}/gradle/wrapper/dists/"
+script:
+  - ./gradlew ktlintCheck
+  - ./gradlew build check

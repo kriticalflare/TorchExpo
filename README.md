@@ -9,6 +9,7 @@
     alt="License">
  <img src="https://img.shields.io/badge/pytorch--android-1.4-%23ee4c2c?style=flat-square"
     alt="PyTorch Android Version">
+ <img src="https://img.shields.io/travis/prabhuomkar/TorchExpo?style=flat-square" alt="Build Status">
 </p>
 
 * [About PyTorch Mobile](#about-pytorch-mobile)
